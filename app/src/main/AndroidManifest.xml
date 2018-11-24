@@ -43,7 +43,8 @@
             android:name=".PesawatBandaraTujuanActivity"
             android:label="Pilih Bandara Kedatangan"
             android:theme="@style/Search"></activity>
-        <activity android:name=".DaftarHotelActivity"></activity>
+        <activity android:name=".DaftarHotelActivity"
+            android:label="Hotel"></activity>
     </application>
 
 </manifest>

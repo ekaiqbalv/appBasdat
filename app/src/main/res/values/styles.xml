@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#14a5e1</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">#0099d8</item>
+        <item name="colorAccent">#14a5e1</item>
     </style>
 
     <style name="Search" parent="Theme.AppCompat.DayNight.DarkActionBar">

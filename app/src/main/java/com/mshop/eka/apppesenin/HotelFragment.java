@@ -72,6 +72,13 @@ public class HotelFragment extends Fragment{
                 startActivityForResult(intent,2);
             }
         });
+        b_cari_kamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),DaftarHotelActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
