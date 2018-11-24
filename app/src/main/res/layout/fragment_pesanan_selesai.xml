@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PesananSelesaiFragment">
+
+    <!-- TODO: Ketika Belom Pernah Pesan -->
+    <TextView
+        android:id="@+id/tv_pesanan_selesai1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tidak ada pesanan"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <TextView
+        android:id="@+id/tv_pesanan_selesai2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pesanan yang telah selesai akn tampil di sini"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pesanan_selesai1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <Button
+        android:id="@+id/b_pesan_kamar_atau_tiket"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_view"
+        android:text="Pesan Kamar atau Tiket"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pesanan_selesai2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"/>
+
+</android.support.constraint.ConstraintLayout>

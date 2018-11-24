@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TiketPesawatFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/fragment_pesawat_ll_bandara_asal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_pesawat_depart"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:text="Bandara Asal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_pesawat_bandara_asal"
+                android:text="Bandara Malang"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"/>
+            <View
+                android:background="#e4e7ed"
+                android:layout_height="1dp"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_pesawat_ll_bandara_tujuan"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_pesawat_ll_bandara_asal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_pesawat_arrival"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:text="Bandara Tujuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_pesawat_bandara_tujuan"
+                android:text="Bandara Soekarno Hatta"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"/>
+            <View
+                android:background="#e4e7ed"
+                android:layout_height="1dp"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_pesawat_ll_tgl_berangkat"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_pesawat_ll_bandara_tujuan"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_calendar"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:text="Tanggal Berangkat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_pesawat_tgl"
+                android:text="Masukkan Tanggal"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"/>
+            <View
+                android:background="#e4e7ed"
+                android:layout_height="1dp"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_pesawat_ll_penumpang"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_pesawat_ll_tgl_berangkat"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_penumpang"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:text="Jumlah Penumpang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spinner_pesawat_penumpang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:background="#e4e7ed"
+                android:layout_height="1dp"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/b_cari_tiket_pesawat"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Cari Tiket Pesawat"
+        android:background="@drawable/rounded_view"
+        android:layout_marginTop="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_pesawat_ll_penumpang"/>
+</android.support.constraint.ConstraintLayout>

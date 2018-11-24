@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name">AppPesenin</string>
+    <string name="title_cari">Cari</string>
+    <string name="title_pesanan">Pesanan</string>
+    <string name="title_akun">Akun</string>
+    <string name="title_hotel">Hotel</string>
+    <string name="title_pesawat">Tiket Pesawat</string>
+    <string name="title_kereta_api">Tiket Kereta</string>
+    <string name="title_aktif">Aktif</string>
+    <string name="title_selesai">Selesai</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="hotel_lokasi">
+        <item>Banda Aceh</item>
+        <item>Langsa</item>
+        <item>Lhokseumawe</item>
+        <item>Meulaboh</item>
+        <item>Sabang</item>
+        <item>Subulussalam</item>
+        <item>Denpasar</item>
+        <item>Pangkalpinang</item>
+        <item>Cilegon</item>
+        <item>Serang</item>
+        <item>Tangerang Selatan</item>
+        <item>Tangerang</item>
+        <item>Bengkulu</item>
+        <item>Gorontalo</item>
+        <item>Jakarta Barat</item>
+        <item>Jakarta Pusat</item>
+        <item>Jakarta Selatan</item>
+        <item>Jakarta Timur</item>
+        <item>Jakarta Utara</item>
+        <item>Sungai Penuh</item>
+        <item>Jambi</item>
+        <item>Bandung</item>
+        <item>Bekasi</item>
+        <item>Bogor</item>
+        <item>Cimahi</item>
+        <item>Cirebon</item>
+        <item>Depok</item>
+        <item>Sukabumi</item>
+        <item>Tasikmalaya</item>
+        <item>Banjar</item>
+        <item>Magelang</item>
+        <item>Pekalongan</item>
+        <item>Purwokerto</item>
+        <item>Salatiga</item>
+        <item>Semarang</item>
+        <item>Surakarta</item>
+        <item>Tegal</item>
+        <item>Batu</item>
+        <item>Blitar</item>
+        <item>Kediri</item>
+        <item>Madiun</item>
+        <item>Malang</item>
+        <item>Mojokerto</item>
+        <item>Pasuruan</item>
+        <item>Probolinggo</item>
+        <item>Surabaya</item>
+        <item>Pontianak</item>
+        <item>Singkawang</item>
+        <item>Banjarbaru</item>
+        <item>Banjarmasin</item>
+        <item>Palangkaraya</item>
+        <item>Balikpapan</item>
+        <item>Bontang</item>
+        <item>Samarinda</item>
+        <item>Tarakan</item>
+        <item>Batam</item>
+        <item>Tanjungpinang</item>
+        <item>Bandar Lampung</item>
+        <item>Metro</item>
+        <item>Ternate</item>
+        <item>Tidore Kepulauan</item>
+        <item>Ambon</item>
+        <item>Tual</item>
+        <item>Bima</item>
+        <item>Mataram</item>
+        <item>Kupang</item>
+        <item>Sorong</item>
+        <item>Jayapura</item>
+        <item>Dumai</item>
+        <item>Pekanbaru</item>
+        <item>Makassar</item>
+        <item>Palopo</item>
+        <item>Parepare</item>
+        <item>Palu</item>
+        <item>Bau-Bau</item>
+        <item>Kendari</item>
+        <item>Bitung</item>
+        <item>Kotamobagu</item>
+        <item>Manado</item>
+        <item>Tomohon</item>
+        <item>Bukittinggi</item>
+        <item>Padang</item>
+        <item>Padangpanjang</item>
+        <item>Pariaman</item>
+        <item>Payakumbuh</item>
+        <item>Sawahlunto</item>
+        <item>Solok</item>
+        <item>Lubuklinggau</item>
+        <item>Pagaralam</item>
+        <item>Palembang</item>
+        <item>Prabumulih</item>
+        <item>Binjai</item>
+        <item>Medan</item>
+        <item>Padang Sidempuan</item>
+        <item>Pematangsiantar</item>
+        <item>Sibolga</item>
+        <item>Tanjungbalai</item>
+        <item>Tebingtinggi</item>
+        <item>Yogyakarta</item>
+    </string-array>
+
+    <string-array name="hotel_durasi">
+        <item>1 Malam</item>
+        <item>2 Malam</item>
+        <item>3 Malam</item>
+        <item>4 Malam</item>
+        <item>5 Malam</item>
+        <item>6 Malam</item>
+        <item>7 Malam</item>
+    </string-array>
+
+    <string-array name="penumpang">
+        <item>1 Penumpang</item>
+        <item>2 Penumpang</item>
+        <item>3 Penumpang</item>
+        <item>4 Penumpang</item>
+        <item>5 Penumpang</item>
+        <item>6 Penumpang</item>
+        <item>7 Penumpang</item>
+    </string-array>
+</resources>
