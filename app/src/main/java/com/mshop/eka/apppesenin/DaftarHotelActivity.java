@@ -1,9 +1,10 @@
 package com.mshop.eka.apppesenin;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,8 @@ public class DaftarHotelActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerItemHotelAdapter recyclerItemHotelAdapter;
     List<RecyclerItemHotel> hotelList;
+    LinearLayout ll_daftar_hotel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +28,7 @@ public class DaftarHotelActivity extends AppCompatActivity {
         hotelList.add(new RecyclerItemHotel(
                 1,
                 R.drawable.hotel1,
-                "Eka Love Hotel",
+                "Nanta Jancuk",
                 "Bintang Alkahal",
                 "Bintaro",
                 "Rp 9.999.999"
@@ -33,7 +36,7 @@ public class DaftarHotelActivity extends AppCompatActivity {
         hotelList.add(new RecyclerItemHotel(
                 2,
                 R.drawable.hotel1,
-                "Eka Homo",
+                "Buat Susah",
                 "Bintang Alkahal",
                 "Bintaro",
                 "Rp 9.999.999"
@@ -41,7 +44,7 @@ public class DaftarHotelActivity extends AppCompatActivity {
         hotelList.add(new RecyclerItemHotel(
                 3,
                 R.drawable.hotel1,
-                "Eka Syabu",
+                "Recycler View Ampas",
                 "Bintang Alkahal",
                 "Bintaro",
                 "Rp 9.999.999"
@@ -49,7 +52,7 @@ public class DaftarHotelActivity extends AppCompatActivity {
         hotelList.add(new RecyclerItemHotel(
                 4,
                 R.drawable.hotel1,
-                "Eka Buntu",
+                "Jancuk Buntu",
                 "Bintang Alkahal",
                 "Bintaro",
                 "Rp 9.999.999"
@@ -57,7 +60,7 @@ public class DaftarHotelActivity extends AppCompatActivity {
         hotelList.add(new RecyclerItemHotel(
                 5,
                 R.drawable.hotel1,
-                "Eka Sange",
+                "Jancuk",
                 "Bintang Alkahal",
                 "Bintaro",
                 "Rp 9.999.999"
@@ -65,18 +68,24 @@ public class DaftarHotelActivity extends AppCompatActivity {
         hotelList.add(new RecyclerItemHotel(
                 6,
                 R.drawable.hotel1,
-                "Eka Love Hotel",
+                "Coklah",
                 "Bintang Alkahal",
                 "Bintaro",
                 "Rp 9.999.999"
         ));
 
-
-
-
         recyclerItemHotelAdapter = new RecyclerItemHotelAdapter(this,hotelList);
         recyclerView.setAdapter(recyclerItemHotelAdapter);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+//        ll_daftar_hotel = (LinearLayout) findViewById(R.id.ll_hotel_daftar);
+//        ll_daftar_hotel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getBaseContext(), DetailHotelActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override

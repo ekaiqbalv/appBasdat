@@ -1,13 +1,16 @@
 package com.mshop.eka.apppesenin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -30,7 +33,7 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HotelViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final HotelViewHolder holder, final int position) {
         RecyclerItemHotel recyclerItemHotel = itemHotels.get(position);
         //-----------------------------------------------------------
         holder.textViewJudul.setText(recyclerItemHotel.getJudul());
@@ -39,6 +42,17 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
         holder.textViewHarga.setText(recyclerItemHotel.getHarga());
 
         holder.imageView.setImageDrawable(mContext.getResources().getDrawable(recyclerItemHotel.getGambar()));
+
+        holder.ll_hotel_daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id = itemHotels.get(position).getId();
+                Context context = v.getContext();
+                Toast.makeText(context, "This is my Toast message! "+id,Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, DetailHotelActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -48,10 +62,9 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
 
     //ViewHoldernya
     class HotelViewHolder extends RecyclerView.ViewHolder {
-
         ImageView imageView;
         TextView textViewJudul,textViewRating,textViewLokasi,textViewHarga;
-
+        LinearLayout ll_hotel_daftar;
 
         public HotelViewHolder(View itemView) {
             super(itemView);
@@ -61,6 +74,7 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
             textViewRating = itemView.findViewById(R.id.tv_rv_rating);
             textViewLokasi = itemView.findViewById(R.id.tv_rv_lokasi);
             textViewHarga = itemView.findViewById(R.id.tv_rv_harga);
+            ll_hotel_daftar = itemView.findViewById(R.id.ll_hotel_daftar);
         }
     }
 }

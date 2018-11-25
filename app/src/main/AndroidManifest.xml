@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=" "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -38,13 +38,16 @@
         <activity
             android:name=".PesawatBandaraAsalActivity"
             android:label="Pilih Bandara Keberangkatan"
-            android:theme="@style/Search"></activity>
+            android:theme="@style/Search" />
         <activity
             android:name=".PesawatBandaraTujuanActivity"
             android:label="Pilih Bandara Kedatangan"
-            android:theme="@style/Search"></activity>
-        <activity android:name=".DaftarHotelActivity"
-            android:label="Hotel"></activity>
+            android:theme="@style/Search" />
+        <activity
+            android:name=".DaftarHotelActivity"
+            android:label="Hotel" />
+        <activity android:name=".DetailHotelActivity" />
+        <activity android:name=".KamarHotelActivity"></activity>
     </application>
 
 </manifest>
