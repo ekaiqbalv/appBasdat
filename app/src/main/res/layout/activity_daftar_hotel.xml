@@ -30,76 +30,17 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="p"
         app:layout_constraintTop_toBottomOf="@+id/ll_hasil_pencarian_hotel_daftar"
         android:paddingTop="10dp">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp">
-            <ImageView
-                android:layout_width="92dp"
-                android:layout_height="135dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/hotel1"
-                app:layout_constraintTop_toTopOf="parent"/>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hotel Everyday"
-                    android:textSize="20sp"
-                    android:textColor="#394152"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bintang 3"
-                    android:textStyle="bold"
-                    android:textColor="#f4d004"/>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_location_grey"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Batu, Malang"
-                        android:layout_marginLeft="3dp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rp 1.500.000"
-                        android:textSize="16sp"
-                        android:textColor="#f46e00"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="/kamar/malam"
-                        android:textSize="16sp"/>
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sudah Termasuk Pajak"/>
-            </LinearLayout>
-        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/Layout_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+        </android.support.v7.widget.RecyclerView>
         <View
             android:background="#e4e7ed"
             android:layout_width="match_parent"

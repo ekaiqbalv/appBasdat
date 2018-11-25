@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+
+    >
+    <!-- A CardView that contains a TextView -->
+    <LinearLayout
+        android:id="@+id/ll_hotel_daftar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/ll_hasil_pencarian_hotel_daftar"
+        android:paddingTop="10dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp">
+            <ImageView
+                android:id="@+id/iv_rv_hotel"
+                android:layout_width="92dp"
+                android:layout_height="135dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hotel1"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:id="@+id/tv_rv_judul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel Everyday"
+                    android:textSize="20sp"
+                    android:textColor="#394152"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_rv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bintang 3"
+                    android:textStyle="bold"
+                    android:textColor="#f4d004"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_location_grey"/>
+                    <TextView
+                        android:id="@+id/tv_rv_lokasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Batu, Malang"
+                        android:layout_marginLeft="3dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+                    <TextView
+                        android:id="@+id/tv_rv_harga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp 1.500.000"
+                        android:textSize="16sp"
+                        android:textColor="#f46e00"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/kamar/malam"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah Termasuk Pajak"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
