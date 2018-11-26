@@ -1,6 +1,8 @@
 package com.mshop.eka.apppesenin;
 
-public class RecyclerItemHotel {
+import java.io.Serializable;
+
+public class RecyclerItemHotel implements Serializable {
     private int id,gambar;
     private String judul,Rating,Lokasi,Harga;
 

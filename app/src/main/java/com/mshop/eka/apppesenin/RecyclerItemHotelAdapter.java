@@ -2,6 +2,7 @@ package com.mshop.eka.apppesenin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,10 +19,17 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
 
     private Context mContext;
     private List<RecyclerItemHotel> itemHotels;
+    int id;
+
+    public int getId() {
+        return id;
+    }
 
     public RecyclerItemHotelAdapter(Context mContext, List<RecyclerItemHotel> itemHotels) {
         this.mContext = mContext;
         this.itemHotels = itemHotels;
+    }
+    public RecyclerItemHotelAdapter() {
     }
 
     @NonNull
@@ -46,10 +54,13 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
         holder.ll_hotel_daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id = itemHotels.get(position).getId();
+                id = itemHotels.get(position).getId();
                 Context context = v.getContext();
                 Toast.makeText(context, "This is my Toast message! "+id,Toast.LENGTH_SHORT).show();
+                Bundle bundle = new Bundle();
+
                 Intent intent = new Intent(context, DetailHotelActivity.class);
+                intent.putExtra("hotel", itemHotels.get(position).getId());
                 context.startActivity(intent);
             }
         });
