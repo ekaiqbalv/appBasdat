@@ -2,32 +2,31 @@ package com.mshop.eka.apppesenin;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
-public class KamarHotelActivity extends AppCompatActivity {
-    ConstraintLayout c_layout_hotel_kamar;
+public class PesanKamarHotelActivity extends AppCompatActivity {
+    Button b_hotel_detail_pesanan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kamar_hotel);
+        setContentView(R.layout.activity_pesan_kamar_hotel);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        c_layout_hotel_kamar = (ConstraintLayout) findViewById(R.id.c_layout_hotel_kamar);
-        c_layout_hotel_kamar.setOnClickListener(new View.OnClickListener() {
+        b_hotel_detail_pesanan = (Button) findViewById(R.id.b_hotel_detail_pesanan);
+        b_hotel_detail_pesanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Intent intent = new Intent(context, PesanKamarHotelActivity.class);
+                Intent intent = new Intent(context, ReviewPesanKamarHotelActivity.class);
                 startActivity(intent);
             }
         });
     }
-
     @Override
     public boolean onSupportNavigateUp() {
         finish();

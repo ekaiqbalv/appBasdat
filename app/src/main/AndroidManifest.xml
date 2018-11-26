@@ -47,7 +47,14 @@
             android:name=".DaftarHotelActivity"
             android:label="Hotel" />
         <activity android:name=".DetailHotelActivity" />
-        <activity android:name=".KamarHotelActivity"></activity>
+        <activity
+            android:name=".KamarHotelActivity"
+            android:label="Pilih Kamar" />
+        <activity
+            android:name=".PesanKamarHotelActivity"
+            android:label="Detail Pemesanan" />
+        <activity android:name=".ReviewPesanKamarHotelActivity"
+            android:label="Review Pemesanan"></activity>
     </application>
 
 </manifest>

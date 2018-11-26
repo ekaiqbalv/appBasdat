@@ -77,15 +77,6 @@ public class DaftarHotelActivity extends AppCompatActivity {
         recyclerItemHotelAdapter = new RecyclerItemHotelAdapter(this,hotelList);
         recyclerView.setAdapter(recyclerItemHotelAdapter);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-//        ll_daftar_hotel = (LinearLayout) findViewById(R.id.ll_hotel_daftar);
-//        ll_daftar_hotel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getBaseContext(), DetailHotelActivity.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
     @Override
