@@ -1,20 +1,17 @@
 package com.mshop.eka.apppesenin;
 
-import android.content.Context;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class KamarHotelActivity extends AppCompatActivity {
     ConstraintLayout c_layout_hotel_kamar;
-    List<Kamar> kamarList;
+    List<Kamar> kamarList = new ArrayList<>();
     RecyclerView recyclerView;
 
     @Override
@@ -23,12 +20,11 @@ public class KamarHotelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kamar_hotel);
 
 
-
-        recyclerView = (RecyclerView) findViewById(R.id.rv_layout_kamar);
+        recyclerView = findViewById(R.id.rv_layout_kamar);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new KamarAdapter(getApplicationContext(), kamarList));
 
-        kamarList = new ArrayList<>();
 
         kamarList.add(new Kamar(
                 1,
@@ -59,31 +55,11 @@ public class KamarHotelActivity extends AppCompatActivity {
         ));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        c_layout_hotel_kamar = (ConstraintLayout) findViewById(R.id.c_layout_hotel_kamar);
-        c_layout_hotel_kamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Context context = v.getContext();
-                Intent intent = new Intent(context, PesanKamarHotelActivity.class);
-                startActivity(intent);
-            }
-        });
+        c_layout_hotel_kamar = findViewById(R.id.c_layout_hotel_kamar);
+
+
     }
 
     @Override

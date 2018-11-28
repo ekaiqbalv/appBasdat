@@ -1,6 +1,8 @@
 package com.mshop.eka.apppesenin;
 
-public class Kamar {
+import java.io.Serializable;
+
+public class Kamar implements Serializable {
     private int id;
     private String judul,makstamu,fasilitas1,fasilitas2,harga;
 

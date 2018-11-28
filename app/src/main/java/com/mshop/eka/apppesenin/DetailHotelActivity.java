@@ -17,6 +17,7 @@ public class DetailHotelActivity extends AppCompatActivity {
         tv_hotel_nama = (TextView) findViewById(R.id.tv_hotel_nama);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //RecyclerItemHotel itemHotel = (RecyclerItemHotel) getIntent().getSerializableExtra("hotel");
         RecyclerItemHotel itemHotel = (RecyclerItemHotel) getIntent().getSerializableExtra("hotel");
         tv_hotel_nama.setText(itemHotel.getJudul());
         b_hotel_pilih_kamar = (Button) findViewById(R.id.b_hotel_pilih_kamar);
