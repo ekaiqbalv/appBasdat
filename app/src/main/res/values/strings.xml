@@ -136,4 +136,12 @@
 
     <string name="deskripsiHotel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur ut metus nec eleifend. Sed sit amet lacus dolor. Fusce neque est, posuere in laoreet ac, scelerisque vitae enim. Duis vehicula, mi tristique suscipit pellentesque posuere.</string>
     <string name="fasilitasHotel">Parking, Elevator, Restaurant, Free WiFi, AC, TV, Kolam Renang</string>
+
+    <string-array name="bank">
+        <item>Pilih Bank</item>
+        <item>BCA</item>
+        <item>BRI</item>
+        <item>BNI</item>
+        <item>MANDIRI</item>
+    </string-array>
 </resources>
