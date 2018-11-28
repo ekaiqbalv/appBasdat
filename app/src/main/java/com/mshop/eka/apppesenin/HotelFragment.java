@@ -28,6 +28,9 @@ public class HotelFragment extends Fragment{
     TextView tv_hotel_tanggal;
     Button b_cari_kamar;
 
+    private static final int REQUEST_CODE_LOCATION = 1;
+    private static final int REQUEST_CODE_CALENDAR = 2;
+
     public HotelFragment() {
         // Required empty public constructor
     }
