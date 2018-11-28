@@ -23,7 +23,6 @@ public class KamarHotelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kamar_hotel);
 
 
-
         recyclerView = (RecyclerView) findViewById(R.id.rv_layout_kamar);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
