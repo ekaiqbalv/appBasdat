@@ -56,8 +56,10 @@
         <activity
             android:name=".ReviewPesanKamarHotelActivity"
             android:label="Review Pemesanan" />
-        <activity android:name=".MetodePembayaranActivity"
-            android:label="Metode Pembayaran"></activity>
+        <activity
+            android:name=".MetodePembayaranActivity"
+            android:label="Metode Pembayaran" />
+        <activity android:name=".DaftarPesawat"></activity>
     </application>
 
 </manifest>
