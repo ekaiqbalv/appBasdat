@@ -15,22 +15,35 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#394152"/>
-    <TextView
-        android:id="@+id/tv_totaltagihan_angka"
+    <LinearLayout
+        android:id="@+id/ll_totaltagihan_angka"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
-        app:layout_constraintTop_toBottomOf="@+id/tv_totaltagihan"
-        android:text="Rp 300.000"
         android:padding="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_totaltagihan">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Rp "/>
+        <TextView
+            android:id="@+id/tv_totaltagihan_angka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="300000"/>
+    </LinearLayout>
     <TextView
         android:id="@+id/tv_informasipembayaran"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Informasi Pembayaran"
-        app:layout_constraintTop_toBottomOf="@+id/tv_totaltagihan_angka"
+        app:layout_constraintTop_toBottomOf="@+id/ll_totaltagihan_angka"
         android:padding="10dp"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -86,12 +99,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Jika melalui Teller, isi Nama Pemilik Rekening dengan nama Penyetor dan Nomor Rekening dengan 0000"
-            android:textSize="14dp"/>
+            android:textSize="14dp"
+            android:paddingBottom="5dp"/>
         <TextView
             android:id="@+id/tv_penjelasanmetodepembayaran2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Demi keamanan transaksi Anda, pastikan untuk tidak menginformasikan data pembayaran kepada pihak manapun kecuali Pesenin."
+            android:text="Demi keamanan transaksi Anda, pastikan untuk tidak menginformasikan data pembayaran kepada pihak manapun kecuali kepada Pesenin."
             android:textSize="14dp"
             android:paddingBottom="10dp"/>
     </LinearLayout>

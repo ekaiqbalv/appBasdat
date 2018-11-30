@@ -44,7 +44,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/ic_location_grey"/>
             <TextView
-                android:id="@+id/tv_hotel_lokasi_kota"
+                android:id="@+id/tv_hotel_lokasi_daerah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:text=", "/>
             <TextView
-                android:id="@+id/tv_hotel_lokasi_kabupaten"
+                android:id="@+id/tv_hotel_lokasi_kota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jawa Timur"/>

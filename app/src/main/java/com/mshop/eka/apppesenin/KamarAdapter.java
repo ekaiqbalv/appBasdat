@@ -2,7 +2,6 @@ package com.mshop.eka.apppesenin;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 import java.util.List;
 
 public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHolder> {
-
     private Context mCtx;
     private List<Kamar> kamarList;
 
@@ -35,24 +33,21 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
     public void onBindViewHolder(@NonNull KamarViewHolder holder, final int position) {
         final Kamar kamar = kamarList.get(position);
 
-        holder.textViewJudul.setText(kamar.getJudul());
+        holder.textViewNamaKamar.setText(kamar.getNamaKamar());
         holder.textViewMakstamu.setText(kamar.getMakstamu());
-        holder.textViewFasilitas1.setText(kamar.getFasilitas1());
-        holder.textViewFasilitas2.setText(kamar.getFasilitas2());
+        holder.textViewSarapan.setText(kamar.getSarapan());
+        holder.textViewWifi.setText(kamar.getWifi());
         holder.textViewHarga.setText(kamar.getHarga());
 
         holder.cl_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle extra = new Bundle();
-                Intent x = new Intent(mCtx, PesanKamarHotelActivity.class);
-                x.putExtra("kamar", kamar);
-                mCtx.startActivity(x);
-
+                Context context = v.getContext();
+                Intent intent = new Intent(context, PesanKamarHotelActivity.class);
+                intent.putExtra("kamar", kamar);
+                context.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -61,20 +56,18 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
     }
 
     class KamarViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewJudul, textViewMakstamu,textViewFasilitas1, textViewFasilitas2,textViewHarga;
+        TextView textViewNamaKamar, textViewMakstamu,textViewSarapan, textViewWifi,textViewHarga;
         ConstraintLayout cl_item;
 
         public KamarViewHolder(View itemView) {
             super(itemView);
 
-
-            textViewJudul = itemView.findViewById(R.id.rv_tv_kamar_judul);
+            textViewNamaKamar = itemView.findViewById(R.id.rv_tv_kamar_judul);
             textViewMakstamu = itemView.findViewById(R.id.rv_tv_kamar_makstamu);
-            textViewFasilitas1 = itemView.findViewById(R.id.rv_tv_kamar_fasilitas1);
-            textViewFasilitas2 = itemView.findViewById(R.id.rv_tv_kamar_fasilitas2);
+            textViewSarapan = itemView.findViewById(R.id.rv_tv_kamar_sarapan);
+            textViewWifi = itemView.findViewById(R.id.rv_tv_kamar_wifi);
             textViewHarga = itemView.findViewById(R.id.rv_tv_kamar_harga);
             cl_item = itemView.findViewById(R.id.c_layout_hotel_kamar);
-
         }
     }
 }

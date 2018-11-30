@@ -61,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:text="#"/>
             <TextView
+                android:id="@+id/tv_idTransaksi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"/>
@@ -92,6 +93,7 @@
                 android:textSize="18sp"
                 android:text="Rp"/>
             <TextView
+                android:id="@+id/tv_jumlahBayar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -127,6 +129,7 @@
             android:layout_marginTop="5dp"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/tv_noRek"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3721773939"/>

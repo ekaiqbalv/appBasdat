@@ -3,36 +3,37 @@ package com.mshop.eka.apppesenin;
 import java.io.Serializable;
 
 public class Kamar implements Serializable {
-    private int id;
-    private String judul,makstamu,fasilitas1,fasilitas2,harga;
+    private int idKamar;
+    private String namaHotel, namaKamar,makstamu, sarapan, wifi,harga;
 
-    public Kamar(int id, String judul, String makstamu, String fasilitas1, String fasilitas2, String harga) {
-        this.id = id;
-        this.judul = judul;
+    public Kamar(String namaHotel, int idKamar, String namaKamar, String makstamu, String sarapan, String wifi, String harga) {
+        this.namaHotel = namaHotel;
+        this.idKamar = idKamar;
+        this.namaKamar = namaKamar;
         this.makstamu = makstamu;
-        this.fasilitas1 = fasilitas1;
-        this.fasilitas2 = fasilitas2;
+        this.sarapan = sarapan;
+        this.wifi = wifi;
         this.harga = harga;
     }
 
-    public int getId() {
-        return id;
+    public String getNamaHotel() { return namaHotel; }
+
+    public int getIdKamar() {
+        return idKamar;
     }
 
-    public String getJudul() {
-        return judul;
+    public String getNamaKamar() {
+        return namaKamar;
     }
 
     public String getMakstamu() {
         return makstamu;
     }
 
-    public String getFasilitas1() {
-        return fasilitas1;
-    }
+    public String getSarapan() { return sarapan; }
 
-    public String getFasilitas2() {
-        return fasilitas2;
+    public String getWifi() {
+        return wifi;
     }
 
     public String getHarga() {

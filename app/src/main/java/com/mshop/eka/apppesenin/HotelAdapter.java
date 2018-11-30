@@ -10,25 +10,24 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
-public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemHotelAdapter.HotelViewHolder>{
+public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHolder>{
 
     private Context mContext;
-    private List<RecyclerItemHotel> itemHotels;
+    private List<Hotel> itemHotels;
     int id;
 
     public int getId() {
         return id;
     }
 
-    public RecyclerItemHotelAdapter(Context mContext, List<RecyclerItemHotel> itemHotels) {
+    public HotelAdapter(Context mContext, List<Hotel> itemHotels) {
         this.mContext = mContext;
         this.itemHotels = itemHotels;
     }
-    public RecyclerItemHotelAdapter() {
+    public HotelAdapter() {
     }
 
     @NonNull
@@ -41,11 +40,12 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
 
     @Override
     public void onBindViewHolder(@NonNull final HotelViewHolder holder, final int position) {
-        RecyclerItemHotel recyclerItemHotel = itemHotels.get(position);
+        Hotel recyclerItemHotel = itemHotels.get(position);
         //-----------------------------------------------------------
-        holder.textViewJudul.setText(recyclerItemHotel.getJudul());
+        holder.textViewNamaHotel.setText(recyclerItemHotel.getNamaHotel());
         holder.textViewRating.setText(recyclerItemHotel.getRating());
-        holder.textViewLokasi.setText(recyclerItemHotel.getLokasi());
+        holder.textViewLokasiDaerah.setText(recyclerItemHotel.getLokasiDaerah());
+        holder.textViewLokasiKota.setText(recyclerItemHotel.getLokasiKota());
         holder.textViewHarga.setText(recyclerItemHotel.getHarga());
 
         holder.imageView.setImageDrawable(mContext.getResources().getDrawable(recyclerItemHotel.getGambar()));
@@ -53,10 +53,7 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
         holder.ll_hotel_daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                id = itemHotels.get(position).getId();
                 Context context = mContext;
-                Toast.makeText(context, "This is my Toast message! "+id,Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(context, DetailHotelActivity.class);
                 intent.putExtra("hotel", itemHotels.get(position));
                 context.startActivity(intent);
@@ -72,16 +69,17 @@ public class RecyclerItemHotelAdapter extends RecyclerView.Adapter<RecyclerItemH
     //ViewHoldernya
     class HotelViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView textViewJudul,textViewRating,textViewLokasi,textViewHarga;
+        TextView textViewNamaHotel,textViewRating,textViewLokasiDaerah,textViewLokasiKota,textViewHarga;
         LinearLayout ll_hotel_daftar;
 
         public HotelViewHolder(View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.iv_rv_hotel);
-            textViewJudul = itemView.findViewById(R.id.tv_rv_judul);
+            textViewNamaHotel = itemView.findViewById(R.id.tv_rv_nama_hotel);
             textViewRating = itemView.findViewById(R.id.tv_rv_rating);
-            textViewLokasi = itemView.findViewById(R.id.tv_rv_lokasi);
+            textViewLokasiDaerah = itemView.findViewById(R.id.tv_rv_lokasi_daerah);
+            textViewLokasiKota = itemView.findViewById(R.id.tv_rv_lokasi_kota);
             textViewHarga = itemView.findViewById(R.id.tv_rv_harga);
             ll_hotel_daftar = itemView.findViewById(R.id.ll_hotel_daftar);
         }
