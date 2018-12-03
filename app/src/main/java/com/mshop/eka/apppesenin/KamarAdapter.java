@@ -15,10 +15,14 @@ import java.util.List;
 public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHolder> {
     private Context mCtx;
     private List<Kamar> kamarList;
+    private Hotel hotel;
+    private PesanHotel dataPesan;
 
-    public KamarAdapter(Context mCtx, List<Kamar> kamarList) {
+    public KamarAdapter(Context mCtx, List<Kamar> kamarList, Hotel hotel, PesanHotel dataPesan) {
         this.mCtx = mCtx;
         this.kamarList = kamarList;
+        this.hotel = hotel;
+        this.dataPesan = dataPesan;
     }
 
     @NonNull
@@ -44,6 +48,8 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, PesanKamarHotelActivity.class);
+                intent.putExtra("hotel",hotel);
+                intent.putExtra("dataPesan",dataPesan);
                 intent.putExtra("kamar", kamar);
                 context.startActivity(intent);
             }
