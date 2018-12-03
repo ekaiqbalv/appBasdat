@@ -31,14 +31,11 @@ public class TiketPesawatFragment extends Fragment {
     Button b_cari_tiket_pesawat;
 
     public TiketPesawatFragment() {
-        // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_tiket_pesawat, container, false);
         View v = inflater.inflate(R.layout.fragment_tiket_pesawat, container, false);
         String[] pesawat_penumpang = getResources().getStringArray(R.array.penumpang);
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner_pesawat_penumpang);
@@ -46,6 +43,30 @@ public class TiketPesawatFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         return v;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1){
+            if(resultCode == RESULT_OK){
+                String strEditText = data.getStringExtra("editBandaraAsalValue");
+                tv_pesawat_bandara_asal.setText(strEditText);
+            }
+        }
+        else if(requestCode == 2){
+            if(resultCode == RESULT_OK){
+                String strEditText = data.getStringExtra("editBandaraTujuanValue");
+                tv_pesawat_bandara_tujuan.setText(strEditText);
+            }
+        }
+        else if(requestCode == 3){
+            if(resultCode == RESULT_OK){
+                String strEditText = data.getStringExtra("editDateValue");
+                tv_pesawat_tgl.setText(strEditText);
+            }
+        }
     }
 
     @Override
@@ -90,29 +111,5 @@ public class TiketPesawatFragment extends Fragment {
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == 1){
-            if(resultCode == RESULT_OK){
-                String strEditText = data.getStringExtra("editBandaraAsalValue");
-                tv_pesawat_bandara_asal.setText(strEditText);
-            }
-        }
-        else if(requestCode == 2){
-            if(resultCode == RESULT_OK){
-                String strEditText = data.getStringExtra("editBandaraTujuanValue");
-                tv_pesawat_bandara_tujuan.setText(strEditText);
-            }
-        }
-        else if(requestCode == 3){
-            if(resultCode == RESULT_OK){
-                String strEditText = data.getStringExtra("editDateValue");
-                tv_pesawat_tgl.setText(strEditText);
-            }
-        }
     }
 }
