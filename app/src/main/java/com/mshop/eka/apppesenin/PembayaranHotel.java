@@ -3,18 +3,18 @@ package com.mshop.eka.apppesenin;
 import java.io.Serializable;
 
 public class PembayaranHotel implements Serializable {
-    int idPembayaran;
+    int idTransaksi;
     String totalTagihan, namaBank, nomorRekening, namaRekening;
 
     public PembayaranHotel() {
     }
 
-    public int getIdPembayaran() {
-        return idPembayaran;
+    public int getIdTransaksi() {
+        return idTransaksi;
     }
 
-    public void setIdPembayaran(int idPembayaran) {
-        this.idPembayaran = idPembayaran;
+    public void setIdTransaksi(int idTransaksi) {
+        this.idTransaksi = idTransaksi;
     }
 
     public String getTotalTagihan() {

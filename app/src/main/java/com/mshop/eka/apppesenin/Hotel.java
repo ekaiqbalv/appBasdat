@@ -1,10 +1,12 @@
 package com.mshop.eka.apppesenin;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Hotel implements Serializable {
     private int idHotel,gambar;
     private String namaHotel,rating,lokasiDaerah,lokasiKota, harga;
+    private ArrayList<Kamar> kamarList;
 
     public Hotel(int idHotel, int gambar, String namaHotel, String rating, String lokasiDaerah, String lokasiKota, String harga) {
         this.idHotel = idHotel;
@@ -14,6 +16,7 @@ public class Hotel implements Serializable {
         this.lokasiDaerah = lokasiDaerah;
         this.lokasiKota = lokasiKota;
         this.harga = harga;
+        kamarList = new ArrayList<>();
     }
 
     public int getIdHotel() {
@@ -38,5 +41,13 @@ public class Hotel implements Serializable {
 
     public String getHarga() {
         return harga;
+    }
+
+    void addKamar (Kamar kamar){ kamarList.add(kamar); }
+
+    void setKamar(ArrayList<Kamar> kamarList){ this.kamarList = kamarList; }
+
+    public ArrayList<Kamar> getKamarList() {
+        return kamarList;
     }
 }

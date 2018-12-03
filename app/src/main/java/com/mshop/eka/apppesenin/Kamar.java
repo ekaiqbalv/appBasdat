@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class Kamar implements Serializable {
     private int idKamar;
-    private String namaKamar, makstamu, sarapan, wifi,harga, tanggal;
+    private String namaKamar, makstamu, sarapan, wifi,harga, tanggal, kuota;
 
-    public Kamar(int idKamar, String namaKamar, String makstamu, String sarapan, String wifi, String harga, String tanggal) {
+    public Kamar(int idKamar, String namaKamar, String makstamu, String sarapan, String wifi, String harga, String tanggal, String kuota) {
         this.idKamar = idKamar;
         this.namaKamar = namaKamar;
         this.makstamu = makstamu;
@@ -14,6 +14,7 @@ public class Kamar implements Serializable {
         this.wifi = wifi;
         this.harga = harga;
         this.tanggal = tanggal;
+        this.kuota = kuota;
     }
 
     public int getIdKamar() {
@@ -38,7 +39,7 @@ public class Kamar implements Serializable {
         return harga;
     }
 
-    public String getTanggal() {
-        return tanggal;
-    }
+    public String getTanggal() { return tanggal; }
+
+    public String getKuota() { return kuota; }
 }

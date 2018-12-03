@@ -24,24 +24,21 @@ public class DetailHotelActivity extends AppCompatActivity {
         tv_hotel_lokasi_kota = findViewById(R.id.tv_hotel_lokasi_kota);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        final Hotel itemHotel = (Hotel) getIntent().getSerializableExtra("hotel");
-        iv_hotel_gambar_detail.setImageResource(itemHotel.getGambar());
-        tv_hotel_nama.setText(itemHotel.getNamaHotel());
-        tv_hotel_bintang.setText(itemHotel.getRating());
-        tv_hotel_lokasi_daerah.setText(itemHotel.getLokasiDaerah());
-        tv_hotel_lokasi_kota.setText(itemHotel.getLokasiKota());
+        final Hotel currentHotel = (Hotel) getIntent().getSerializableExtra("hotel");
+        final PesanHotel dataPesan = (PesanHotel) getIntent().getSerializableExtra("dataPesan");
+        iv_hotel_gambar_detail.setImageResource(currentHotel.getGambar());
+        tv_hotel_nama.setText(currentHotel.getNamaHotel());
+        tv_hotel_bintang.setText(currentHotel.getRating());
+        tv_hotel_lokasi_daerah.setText(currentHotel.getLokasiDaerah());
+        tv_hotel_lokasi_kota.setText(currentHotel.getLokasiKota());
         b_hotel_pilih_kamar = findViewById(R.id.b_hotel_pilih_kamar);
 
         b_hotel_pilih_kamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int idHotel = itemHotel.getIdHotel();
-                String namaHotel = itemHotel.getNamaHotel();
                 Intent intent = new Intent(getBaseContext(), KamarHotelActivity.class);
-                Bundle extras = new Bundle();
-                extras.putInt("IdHotel",idHotel);
-                extras.putString("NamaHotel",namaHotel);
-                intent.putExtras(extras);
+                intent.putExtra("dataPesan",dataPesan);
+                intent.putExtra("hotel", currentHotel);
                 startActivity(intent);
             }
         });

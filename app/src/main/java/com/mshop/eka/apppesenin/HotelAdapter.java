@@ -17,15 +17,17 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
 
     private Context mContext;
     private List<Hotel> itemHotels;
+    private PesanHotel dataPesan;
     int id;
 
     public int getId() {
         return id;
     }
 
-    public HotelAdapter(Context mContext, List<Hotel> itemHotels) {
+    public HotelAdapter(Context mContext, List<Hotel> itemHotels, PesanHotel dataPesan) {
         this.mContext = mContext;
         this.itemHotels = itemHotels;
+        this.dataPesan = dataPesan;
     }
     public HotelAdapter() {
     }
@@ -55,6 +57,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
             public void onClick(View v) {
                 Context context = mContext;
                 Intent intent = new Intent(context, DetailHotelActivity.class);
+                intent.putExtra("dataPesan",dataPesan);
                 intent.putExtra("hotel", itemHotels.get(position));
                 context.startActivity(intent);
             }

@@ -42,6 +42,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
         holder.textViewSarapan.setText(kamar.getSarapan());
         holder.textViewWifi.setText(kamar.getWifi());
         holder.textViewHarga.setText(kamar.getHarga());
+        holder.textViewKuota.setText(kamar.getKuota());
 
         holder.cl_item.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +63,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
     }
 
     class KamarViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewNamaKamar, textViewMakstamu,textViewSarapan, textViewWifi,textViewHarga;
+        TextView textViewNamaKamar, textViewMakstamu,textViewSarapan, textViewWifi,textViewHarga, textViewKuota;
         ConstraintLayout cl_item;
 
         public KamarViewHolder(View itemView) {
@@ -73,6 +74,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
             textViewSarapan = itemView.findViewById(R.id.rv_tv_kamar_sarapan);
             textViewWifi = itemView.findViewById(R.id.rv_tv_kamar_wifi);
             textViewHarga = itemView.findViewById(R.id.rv_tv_kamar_harga);
+            textViewKuota = itemView.findViewById(R.id.rv_tv_kamar_kuota);
             cl_item = itemView.findViewById(R.id.c_layout_hotel_kamar);
         }
     }

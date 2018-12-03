@@ -25,13 +25,42 @@
         android:orientation="vertical"
         android:padding="10dp"
         android:background="#fff">
-        <TextView
-            android:id="@+id/tv_reviewKamar_namaHotel"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hotel Everyday"
-            android:textSize="16sp"
-            android:textColor="#394152"/>
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_reviewKamar_namaHotel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="Hotel Everyday"
+                android:textSize="16sp"
+                android:textColor="#394152"/>
+            <TextView
+                android:id="@+id/tv_reviewKamar_lokasiDaerah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@+id/tv_reviewKamar_koma"
+                android:text="Lowokwaru"
+                android:textSize="16sp"
+                android:textColor="#394152" />
+            <TextView
+                android:id="@+id/tv_reviewKamar_koma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@+id/tv_reviewKamar_lokasiKota"
+                android:text=", "
+                android:textSize="16sp"
+                android:textColor="#394152"/>
+            <TextView
+                android:id="@+id/tv_reviewKamar_lokasiKota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="Malang"
+                android:textSize="16sp"
+                android:textColor="#394152"/>
+        </android.support.constraint.ConstraintLayout>
         <View
             android:background="#e4e7ed"
             android:layout_width="match_parent"
@@ -79,7 +108,22 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" Malam"/>
+                        android:text=" Malam "/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Check-In"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" "/>
+                    <TextView
+                        android:id="@+id/tv_reviewKamar_tgl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24/12/2018"
+                        android:textSize="12sp"/>
                 </LinearLayout>
                 <TextView
                     android:id="@+id/tv_reviewKamar_namaKamar"

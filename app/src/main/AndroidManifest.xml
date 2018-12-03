@@ -56,8 +56,25 @@
         <activity
             android:name=".ReviewPesanKamarHotelActivity"
             android:label="Review Pemesanan" />
-        <activity android:name=".MetodePembayaranActivity"
-            android:label="Metode Pembayaran"></activity>
+        <activity
+            android:name=".MetodePembayaranActivity"
+            android:label="Metode Pembayaran" />
+        <activity android:name=".CheckoutBerhasilHotel" />
+        <activity
+            android:name=".DaftarPesawat"
+            android:label="Tiket Pesawat" />
+        <activity
+            android:name=".InfoPesawatActivity"
+            android:label="Detail Pesawat" />
+        <activity
+            android:name=".PesanTiketPesawatActivity"
+            android:label="Detail Pemesanan" />
+        <activity
+            android:name=".ReviewPesanTiketPesawatActivity"
+            android:label="Review Pemesanan" />
+        <activity android:name=".MetodePembayaranPesawatActivity"
+            android:label="Metode Pembayaran"/>
+        <activity android:name=".CheckoutBerhasilPesawat"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package com.mshop.eka.apppesenin;
 
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -43,6 +42,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         loadFragment(fragment);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 
     private boolean loadFragment(Fragment fragment) {

@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -81,6 +80,14 @@ public class TiketPesawatFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),CalenderActivity.class);
                 startActivityForResult(intent,3);
+            }
+        });
+
+        b_cari_tiket_pesawat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),DaftarPesawat.class);
+                startActivity(intent);
             }
         });
     }

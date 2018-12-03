@@ -23,6 +23,7 @@ public class CalenderActivity extends AppCompatActivity{
          calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
              @Override
              public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                 month = month+1;
                  String coba = dayOfMonth+"/"+month+"/"+year;
                  Intent intent = new Intent();
                  intent.putExtra("editDateValue", coba);

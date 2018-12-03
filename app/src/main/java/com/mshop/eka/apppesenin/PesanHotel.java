@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class PesanHotel implements Serializable {
     int idTransaksi;
-    String lokasiKota, tanggal, durasi, namaPemesan, nomoHp, email,totalBiaya;
+    String lokasiKota, tanggal, durasi, namaPemesan, nomorHp, email,totalBiaya;
 
     public PesanHotel() {
     }
@@ -46,9 +46,9 @@ public class PesanHotel implements Serializable {
 
     public void setNamaPemesan(String namaPemesan) { this.namaPemesan = namaPemesan; }
 
-    public String getNomoHp() { return nomoHp; }
+    public String getNomorHp() { return nomorHp; }
 
-    public void setNomoHp(String nomoHp) { this.nomoHp = nomoHp; }
+    public void setNomorHp(String nomorHp) { this.nomorHp = nomorHp; }
 
     public String getEmail() { return email; }
 
