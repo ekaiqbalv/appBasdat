@@ -10,7 +10,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.Random;
+
 public class CheckoutBerhasilPesawat extends AppCompatActivity {
+    Random random;
+    int jumlahPembayaran;
+    String jumlahPembayaranString;
+
     TextView tv_idTransaksi, tv_jumlahBayar, tv_noRek;
     ImageView iv_logo_bank;
     Button b_konfirmasi;
@@ -20,14 +28,37 @@ public class CheckoutBerhasilPesawat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_berhasil_pesawat);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        final Pesawat itemPesawat = (Pesawat) getIntent().getSerializableExtra("pesawat");
+        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
+        final PembayaranPesawat pembayaranPesawat = (PembayaranPesawat) getIntent().getSerializableExtra("pembayaranPesawat");
+        random = new Random();
         tv_idTransaksi = findViewById(R.id.tv_idTransaksiPesawat);
         tv_jumlahBayar = findViewById(R.id.tv_jumlahBayarPesawat);
         tv_noRek = findViewById(R.id.tv_noRekPesawat);
+        iv_logo_bank = findViewById(R.id.iv_logo_bankPesawat);
         b_konfirmasi = findViewById(R.id.b_konfirmasiPesawat);
 
-        //Tambahin total harga kamar sama 3 digit angka random(unik). Baru setText jumlahBayar pake nilai itu.
+        tv_idTransaksi.setText(Integer.toString(pembayaranPesawat.getIdTransaksi()));
+        jumlahPembayaran = (Integer.parseInt(pembayaranPesawat.getTotalTagihan()))+random.nextInt(900) + 100;;
+        jumlahPembayaranString = NumberFormat.getNumberInstance(Locale.GERMAN).format(jumlahPembayaran);
+        tv_jumlahBayar.setText(jumlahPembayaranString);
+
+        if(pembayaranPesawat.getNamaBank().equalsIgnoreCase("bca")){
+            iv_logo_bank.setImageResource(R.drawable.bankbca);
+            tv_noRek.setText("3721773939");
+        }
+        else if(pembayaranPesawat.getNamaBank().equalsIgnoreCase("bri")){
+            iv_logo_bank.setImageResource(R.drawable.bankbri);
+            tv_noRek.setText("5121773939");
+        }
+        else if(pembayaranPesawat.getNamaBank().equalsIgnoreCase("bni")){
+            iv_logo_bank.setImageResource(R.drawable.bankbni);
+            tv_noRek.setText("8171773939");
+        }
+        else if(pembayaranPesawat.getNamaBank().equalsIgnoreCase("mandiri")){
+            iv_logo_bank.setImageResource(R.drawable.bankmandiri);
+            tv_noRek.setText("0121773939");
+        }
 
         b_konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +73,7 @@ public class CheckoutBerhasilPesawat extends AppCompatActivity {
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return super.onSupportNavigateUp();
+    public void onBackPressed() {
+
     }
 }

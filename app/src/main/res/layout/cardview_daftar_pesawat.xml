@@ -108,6 +108,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
             android:paddingRight="10dp"
             app:layout_constraintRight_toRightOf="parent"
             android:orientation="vertical">
@@ -147,6 +148,22 @@
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
                 android:gravity="center"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kursi Tersedia "/>
+                <TextView
+                    android:id="@+id/tv_kuotaPesawat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="40"/>
+            </LinearLayout>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
     <View

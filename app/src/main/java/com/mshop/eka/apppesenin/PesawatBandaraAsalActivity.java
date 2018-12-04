@@ -17,11 +17,10 @@ public class PesawatBandaraAsalActivity extends AppCompatActivity implements Ada
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String[] lokasi_hotel = getResources().getStringArray(R.array.hotel_lokasi);
+        String[] kota_bandara = getResources().getStringArray(R.array.kota_bandara);
 
         AutoCompleteTextView editBandaraAsal = findViewById(R.id.actv_pesawat_bandara_asal);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.custom_list_search_bandara, R.id.tv_custom,lokasi_hotel);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.custom_list_search_bandara, R.id.tv_custom_kota,kota_bandara);
         editBandaraAsal.setAdapter(adapter);
         editBandaraAsal.setOnItemClickListener(this);
     }
@@ -36,7 +35,7 @@ public class PesawatBandaraAsalActivity extends AppCompatActivity implements Ada
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String item = parent.getItemAtPosition(position).toString();
         Intent intent = new Intent();
-        intent.putExtra("editBandaraAsalValue", item);
+        intent.putExtra("editKotaAsalValue", item);
         setResult(RESULT_OK, intent);
         finish();
     }

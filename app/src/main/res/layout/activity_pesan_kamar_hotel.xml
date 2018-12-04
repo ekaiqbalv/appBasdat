@@ -247,11 +247,11 @@
             android:id="@+id/tv_pesanKamar_durasi_hitung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toLeftOf="@id/tv_hotel_simbol_kali"
+            app:layout_constraintRight_toLeftOf="@id/tv_pesanPesawat_simbol_kali"
             android:layout_marginRight="10dp"
             android:text="1"/>
         <TextView
-            android:id="@+id/tv_hotel_simbol_kali"
+            android:id="@+id/tv_pesanPesawat_simbol_kali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintRight_toLeftOf="@id/ll_pesanKamar_biaya"

@@ -113,6 +113,142 @@
         <item>Tebingtinggi</item>
         <item>Yogyakarta</item>
     </string-array>
+    <string-array name="kota_bandara">
+        <item>Banda Aceh</item>
+        <item>Medan</item>
+        <item>Padang</item>
+        <item>Palembang</item>
+        <item>Pekanbaru</item>
+        <item>Tanjung Pinang</item>
+        <item>Jambi</item>
+        <item>Pangkalpinang</item>
+        <item>Bengkulu</item>
+        <item>Bandar Lambung</item>
+        <item>Jakarta</item>
+        <item>Tangerang</item>
+        <item>Bandung</item>
+        <item>Semarang</item>
+        <item>Surabaya</item>
+        <item>Yogyakarta</item>
+        <item>Denpasar</item>
+        <item>Mataram</item>
+        <item>Kupang</item>
+        <item>Pontianak</item>
+        <item>Tanjung Selor</item>
+        <item>Samarinda</item>
+        <item>Palangka Raya</item>
+        <item>Banjarmasin</item>
+        <item>Mamuju</item>
+        <item>Manado</item>
+        <item>Palu</item>
+        <item>Makassar</item>
+        <item>Kendari</item>
+        <item>Ambon</item>
+        <item>Ternate</item>
+        <item>Gorontalo</item>
+        <item>Jayapura</item>
+        <item>Manokwari</item>
+        <item>Solo</item>
+        <item>Majalengka</item>
+        <item>Balikpapan</item>
+        <item>Siborong- Borong</item>
+        <item>Batam</item>
+        <item>Palu</item>
+        <item>Labuan Bajo</item>
+        <item>Malang</item>
+        <item>Palopo</item>
+        <item>Papua</item>
+        <item>Papua</item>
+        <item>Tarakan</item>
+        <item>Purbalingga</item>
+        <item>Lubuk Linggau</item>
+        <item>Poso</item>
+        <item>Atambua</item>
+        <item>Sumbawa Besar</item>
+        <item>Tanjung Pandan</item>
+        <item>Raja Ampat</item>
+        <item>Tasikmalaya</item>
+        <item>Sabang</item>
+        <item>Sampit</item>
+        <item>Kotawaringin Barat</item>
+        <item>Pulau Sumba</item>
+        <item>Berau</item>
+        <item>Sorong</item>
+        <item>Morowali</item>
+        <item>Sumenep</item>
+        <item>Tana Toraja</item>
+        <item>Tarakan</item>
+        <item>Toli-Tolo</item>
+        <item>Wakatobi</item>
+    </string-array>
+    <string-array name="bandara">
+        <item>Sultan Iskandar Muda</item>
+        <item>Kuala Namu</item>
+        <item>Minangkabau</item>
+        <item>Sultan Mahmud Badaruddin II</item>
+        <item>Sultan Syarif Kasim II</item>
+        <item>Raja Haji Fisabilillah</item>
+        <item>Sultan Thaha</item>
+        <item>Depati Amir</item>
+        <item>Fatmawati Soekarno</item>
+        <item>Radin Inten II</item>
+        <item>Halim Perdanakusuma</item>
+        <item>Soekarno Hatta * (lihat penjelasan)</item>
+        <item>Husein Sastranegara</item>
+        <item>Achmad Yani</item>
+        <item>Juanda</item>
+        <item>Adi Sutjipto</item>
+        <item>I Gusti Ngurah Rai</item>
+        <item>Lombok</item>
+        <item>El Tari</item>
+        <item>Supadio</item>
+        <item>Tanjung Harapan</item>
+        <item>Apt Pranoto</item>
+        <item>Tjilik Riwut</item>
+        <item>Syamsudin Noor</item>
+        <item>Tampa Padang</item>
+        <item>Sam Ratulangi</item>
+        <item>Mutiara</item>
+        <item>Sultan Hasanuddin</item>
+        <item>Haluoleo</item>
+        <item>Pattimura</item>
+        <item>Sultan Babullah</item>
+        <item>Jalaluddin</item>
+        <item>Sentani</item>
+        <item>Rendani</item>
+        <item>Adi Sumarmo</item>
+        <item>Kertajati</item>
+        <item>Aji Muhammad Sulaiman Sepinggan</item>
+        <item>Silangit</item>
+        <item>Hang Nadim</item>
+        <item>SIS Al-Jufrie</item>
+        <item>Komodo</item>
+        <item>Abdul Rachman Saleh</item>
+        <item>Lagaligo</item>
+        <item>Tanah Merah</item>
+        <item>Oksibil</item>
+        <item>Juwata</item>
+        <item>Wirasaba</item>
+        <item>Silampari</item>
+        <item>Poso</item>
+        <item>Haliwen</item>
+        <item>Sultan Muhammad Kaharuddin III</item>
+        <item>H.A.S Hanandjoeddin</item>
+        <item>Marinda</item>
+        <item>Wiriadinata</item>
+        <item>Maimun Saleh</item>
+        <item>H. Asan Sampit</item>
+        <item>Iskandar</item>
+        <item>Tambolaka</item>
+        <item>Kalimarau</item>
+        <item>Dominique Edward Osok</item>
+        <item>Morowali</item>
+        <item>Trunojoyo</item>
+        <item>Pongtiku</item>
+        <item>Juwata</item>
+        <item>Sultan Bantilan</item>
+        <item>Matahora</item>
+    </string-array>
 
     <string-array name="hotel_durasi">
         <item>1</item>
@@ -125,13 +261,13 @@
     </string-array>
 
     <string-array name="penumpang">
-        <item>1 Penumpang</item>
-        <item>2 Penumpang</item>
-        <item>3 Penumpang</item>
-        <item>4 Penumpang</item>
-        <item>5 Penumpang</item>
-        <item>6 Penumpang</item>
-        <item>7 Penumpang</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
 
     <string name="deskripsiHotel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur ut metus nec eleifend. Sed sit amet lacus dolor. Fusce neque est, posuere in laoreet ac, scelerisque vitae enim. Duis vehicula, mi tristique suscipit pellentesque posuere.</string>

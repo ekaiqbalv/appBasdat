@@ -8,7 +8,7 @@
     android:background="#e6eaed">
 
     <TextView
-        android:id="@+id/tv_pesan_detail"
+        android:id="@+id/tv_pesanPesawat_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -18,10 +18,10 @@
         android:textStyle="bold"
         android:textColor="#394152"/>
     <LinearLayout
-        android:id="@+id/ll_pesan_data_pesawat"
+        android:id="@+id/ll_pesanPesawat_data_pesawat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_pesan_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_pesanPesawat_detail"
         android:orientation="vertical"
         android:padding="10dp"
         android:background="#fff">
@@ -30,21 +30,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/tv_pesan_namaMaskapai"
+                android:id="@+id/tv_pesanPesawat_namaMaskapai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Garuda Indonesia"
                 android:textColor="#000"
                 android:textSize="18sp"/>
             <ImageView
-                android:id="@+id/iv_pesan_logoMaskapai"
+                android:id="@+id/iv_pesanPesawat_logoMaskapai"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
-                app:layout_constraintLeft_toRightOf="@+id/tv_pesan_namaMaskapai"
+                app:layout_constraintLeft_toRightOf="@+id/tv_pesanPesawat_namaMaskapai"
                 android:src="@drawable/garuda"/>
             <TextView
-                android:id="@+id/tv_pesan_waktuBerangkat"
+                android:id="@+id/tv_pesanPesawat_waktuBerangkat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
@@ -56,10 +56,10 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
-                app:layout_constraintRight_toLeftOf="@+id/tv_pesan_waktuSampai"
+                app:layout_constraintRight_toLeftOf="@+id/tv_pesanPesawat_waktuSampai"
                 android:src="@drawable/ic_plane"/>
             <TextView
-                android:id="@+id/tv_pesan_waktuSampai"
+                android:id="@+id/tv_pesanPesawat_waktuSampai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
@@ -106,7 +106,7 @@
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/tv_pesan_tgl"
+                        android:id="@+id/tv_pesanPesawat_tgl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
@@ -118,7 +118,7 @@
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/tv_pesan_bandaraAsal"
+                        android:id="@+id/tv_pesanPesawat_bandaraAsal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
@@ -128,6 +128,7 @@
                         android:layout_height="wrap_content"
                         android:text=" "/>
                     <TextView
+                        android:id="@+id/tv_pesanPesawat_terminalAsal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
@@ -139,7 +140,7 @@
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/tv_pesan_bandaraTujuan"
+                        android:id="@+id/tv_pesanPesawat_bandaraTujuan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
@@ -149,6 +150,7 @@
                         android:layout_height="wrap_content"
                         android:text=" "/>
                     <TextView
+                        android:id="@+id/tv_pesanPesawat_terminalTujuan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
@@ -158,7 +160,7 @@
         </LinearLayout>
     </LinearLayout>
     <TextView
-        android:id="@+id/tv_pesan_data_pemesan"
+        android:id="@+id/tv_pesanPesawat_data_pemesan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -166,12 +168,12 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#394152"
-        app:layout_constraintTop_toBottomOf="@id/ll_pesan_data_pesawat"/>
+        app:layout_constraintTop_toBottomOf="@id/ll_pesanPesawat_data_pesawat"/>
     <LinearLayout
-        android:id="@+id/ll_pesan_data_pemesan"
+        android:id="@+id/ll_pesanPesawat_data_pemesan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_pesan_data_pemesan"
+        app:layout_constraintTop_toBottomOf="@id/tv_pesanPesawat_data_pemesan"
         android:orientation="vertical"
         android:padding="10dp"
         android:background="#fff">
@@ -238,7 +240,7 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:background="#fff"
-        app:layout_constraintTop_toBottomOf="@id/ll_pesan_data_pemesan">
+        app:layout_constraintTop_toBottomOf="@id/ll_pesanPesawat_data_pemesan">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -251,18 +253,18 @@
             android:id="@+id/tv_pesanPenumpang_hitung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toLeftOf="@id/tv_hotel_simbol_kali"
+            app:layout_constraintRight_toLeftOf="@id/tv_pesanPesawat_simbol_kali"
             android:layout_marginRight="10dp"
             android:text="1"/>
         <TextView
-            android:id="@+id/tv_hotel_simbol_kali"
+            android:id="@+id/tv_pesanPesawat_simbol_kali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toLeftOf="@id/ll_pesan_biaya"
+            app:layout_constraintRight_toLeftOf="@id/ll_pesanPesawat_biaya"
             android:layout_marginRight="10dp"
             android:text="x"/>
         <LinearLayout
-            android:id="@+id/ll_pesan_biaya"
+            android:id="@+id/ll_pesanPesawat_biaya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintRight_toRightOf="parent"
@@ -299,7 +301,7 @@
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
     <Button
-        android:id="@+id/b_pesan_detail_pesanan"
+        android:id="@+id/b_pesanPesawat_detail_pesanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

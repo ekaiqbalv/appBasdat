@@ -1,9 +1,10 @@
 package com.mshop.eka.apppesenin;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,21 +14,31 @@ public class DaftarPesawat extends AppCompatActivity {
     PesawatAdapter pesawatAdapter;
     List<Pesawat> pesawatList;
 
+    TextView tv_pencarianKotaAsal, tv_pencarianKotaTujuan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_pesawat);
+
+        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
+
+        tv_pencarianKotaAsal = findViewById(R.id.tv_pencarian_kotaAsal);
+        tv_pencarianKotaTujuan = findViewById(R.id.tv_pencarian_kotaTujuan);
+
+        tv_pencarianKotaAsal.setText(dataPesanPesawat.getKotaAsal());
+        tv_pencarianKotaTujuan.setText(dataPesanPesawat.getKotaTujuan());
+
         pesawatList = new ArrayList<>();
         recyclerView = findViewById(R.id.Layout_rv_pesawat);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        pesawatAdapter = new PesawatAdapter(this,pesawatList);
-        recyclerView.setAdapter(pesawatAdapter);
 
         pesawatList.add(new Pesawat(
                 1,
                 R.drawable.lion,
                 "Lion Air",
+                "23/12/2018",
                 "08:25",
                 "10:00",
                 "Jakarta",
@@ -52,6 +63,7 @@ public class DaftarPesawat extends AppCompatActivity {
                 2,
                 R.drawable.citilink,
                 "Citilink",
+                "23/12/2018",
                 "08:25",
                 "10:00",
                 "Jakarta",
@@ -76,6 +88,7 @@ public class DaftarPesawat extends AppCompatActivity {
                 3,
                 R.drawable.batik,
                 "Batik Air",
+                "25/12/2018",
                 "08:25",
                 "10:00",
                 "Jakarta",
@@ -100,6 +113,7 @@ public class DaftarPesawat extends AppCompatActivity {
                 4,
                 R.drawable.garuda,
                 "Garuda Indonesia",
+                "24/12/2018",
                 "08:25",
                 "10:00",
                 "Jakarta",
@@ -120,6 +134,17 @@ public class DaftarPesawat extends AppCompatActivity {
                 "200",
                 "970000"
         ));
+
+        ArrayList<Pesawat> filteredPesawat = new ArrayList<>();
+        for (Pesawat pesawat : pesawatList){
+            if(dataPesanPesawat.getTanggal().equalsIgnoreCase(pesawat.getTanggal())&&dataPesanPesawat.getKotaAsal().equalsIgnoreCase(pesawat.getKotaAsal())&&
+                    dataPesanPesawat.getKotaTujuan().equalsIgnoreCase(pesawat.getKotaTujuan())){
+                filteredPesawat.add(pesawat);
+            }
+        }
+
+        pesawatAdapter = new PesawatAdapter(this,filteredPesawat,dataPesanPesawat);
+        recyclerView.setAdapter(pesawatAdapter);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

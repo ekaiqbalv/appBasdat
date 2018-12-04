@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Menampilkan hasil pencarian " />
         <TextView
+            android:id="@+id/tv_pencarian_kotaAsal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:text=" - "/>
         <TextView
+            android:id="@+id/tv_pencarian_kotaTujuan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"

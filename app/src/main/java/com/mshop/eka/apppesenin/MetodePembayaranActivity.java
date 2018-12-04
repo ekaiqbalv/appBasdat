@@ -60,6 +60,8 @@ public class MetodePembayaranActivity extends AppCompatActivity {
         b_metode_pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pembayaranHotel.setNomorRekening(et_nopemilikrekening.getText().toString());
+                pembayaranHotel.setNamaRekening(et_namapemilikrekening.getText().toString());
                 Context context = v.getContext();
                 Intent intent = new Intent(context, CheckoutBerhasilHotel.class);
                 intent.putExtra("pembayaranHotel",pembayaranHotel);

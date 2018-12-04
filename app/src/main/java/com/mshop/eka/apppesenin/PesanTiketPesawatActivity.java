@@ -10,10 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PesanTiketPesawatActivity extends AppCompatActivity {
-    TextView tv_namaMaskapai, tv_waktuBerangkat, tv_waktuSampai, tv_tgl, tv_bandaraAsal, tv_bandaraTujuan, tv_penumpang, tv_biaya, tv_biayaTotal;
+    TextView tv_namaMaskapai, tv_waktuBerangkat, tv_waktuSampai, tv_tgl, tv_bandaraAsal, tv_terminalAsal, tv_bandaraTujuan,
+            tv_terminalTujuan, tv_penumpang, tv_biaya, tv_biayaTotal;
     EditText et_namaPemesan, et_nomorHp, et_email;
     ImageView iv_logoMaskapai;
-    Button b_pesan_detail_pesanan;
+    Button b_pesan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +22,18 @@ public class PesanTiketPesawatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pesan_tiket_pesawat);
 
         final Pesawat itemPesawat = (Pesawat) getIntent().getSerializableExtra("pesawat");
+        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        tv_namaMaskapai = findViewById(R.id.tv_pesan_namaMaskapai);
-        iv_logoMaskapai = findViewById(R.id.iv_pesan_logoMaskapai);
-        tv_waktuBerangkat = findViewById(R.id.tv_pesan_waktuBerangkat);
-        tv_waktuSampai = findViewById(R.id.tv_pesan_waktuSampai);
-        tv_tgl = findViewById(R.id.tv_pesan_tgl);
-        tv_bandaraAsal = findViewById(R.id.tv_pesan_bandaraAsal);
-        tv_bandaraTujuan = findViewById(R.id.tv_pesan_bandaraTujuan);
+        tv_namaMaskapai = findViewById(R.id.tv_pesanPesawat_namaMaskapai);
+        iv_logoMaskapai = findViewById(R.id.iv_pesanPesawat_logoMaskapai);
+        tv_waktuBerangkat = findViewById(R.id.tv_pesanPesawat_waktuBerangkat);
+        tv_waktuSampai = findViewById(R.id.tv_pesanPesawat_waktuSampai);
+        tv_tgl = findViewById(R.id.tv_pesanPesawat_tgl);
+        tv_bandaraAsal = findViewById(R.id.tv_pesanPesawat_bandaraAsal);
+        tv_terminalAsal = findViewById(R.id.tv_pesanPesawat_terminalAsal);
+        tv_bandaraTujuan = findViewById(R.id.tv_pesanPesawat_bandaraTujuan);
+        tv_terminalTujuan = findViewById(R.id.tv_pesanPesawat_terminalTujuan);
         et_namaPemesan = findViewById(R.id.et_pesanPesawat_nama);
         et_nomorHp = findViewById(R.id.et_pesanPesawat_noHp);
         et_email = findViewById(R.id.et_pesanPesawat_email);
@@ -37,28 +41,35 @@ public class PesanTiketPesawatActivity extends AppCompatActivity {
         tv_biaya = findViewById(R.id.tv_pesanPesawat_harga_hitung);
         tv_biayaTotal = findViewById(R.id.tv_pesanPesawat_harga_total);
 
-        b_pesan_detail_pesanan = findViewById(R.id.b_pesan_detail_pesanan);
+        b_pesan = findViewById(R.id.b_pesanPesawat_detail_pesanan);
 
         tv_namaMaskapai.setText(itemPesawat.getNama_Maskapai());
         iv_logoMaskapai.setImageResource(itemPesawat.getImageMaskapai());
         tv_waktuBerangkat.setText(itemPesawat.getWaktuBerangkat());
         tv_waktuSampai.setText(itemPesawat.getWaktuSampai());
-        //harusnya get dari data pas milih tanggal kan ya
-        tv_tgl.setText("25/12/2018");
+        tv_tgl.setText(itemPesawat.getTanggal());
         tv_bandaraAsal.setText(itemPesawat.getBandaraAsalSingkat());
+        tv_terminalAsal.setText(itemPesawat.getTerminalAsal());
         tv_bandaraTujuan.setText(itemPesawat.getBandaraTujuanSingkat());
-        //penumpang harusnya diambil dari data pas awal milih
-        tv_penumpang.setText("1");
+        tv_terminalTujuan.setText(itemPesawat.getTerminalTujuan());
+        tv_penumpang.setText(dataPesanPesawat.getPenumpang());
         tv_biaya.setText(itemPesawat.getHarga());
-        //getText
-        String namaPemesan = et_namaPemesan.getText().toString();
-        String nomorHp = et_nomorHp.getText().toString();
-        String email = et_nomorHp.getText().toString();
+        int jumlahPenumpang = Integer.parseInt(tv_penumpang.getText().toString());
+        int hargaTiketPesawat = Integer.parseInt(itemPesawat.getHarga());
+        int hargaTotalInt = jumlahPenumpang*hargaTiketPesawat;
+        String hargaTotalString = Integer.toString(hargaTotalInt);
+        tv_biayaTotal.setText(hargaTotalString);
 
-        b_pesan_detail_pesanan.setOnClickListener(new View.OnClickListener() {
+        b_pesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dataPesanPesawat.setNamaPemesan(et_namaPemesan.getText().toString());
+                dataPesanPesawat.setNomorHp(et_nomorHp.getText().toString());
+                dataPesanPesawat.setEmail(et_email.getText().toString());
+                dataPesanPesawat.setTotalBiaya(tv_biayaTotal.getText().toString());
                 Intent intent = new Intent(getBaseContext(), ReviewPesanTiketPesawatActivity.class);
+                intent.putExtra("dataPesanPesawat",dataPesanPesawat);
+                intent.putExtra("pesawat", itemPesawat);
                 startActivity(intent);
             }
         });

@@ -8,7 +8,7 @@
     android:background="#e6eaed">
 
     <TextView
-        android:id="@+id/tv_pesan_detail"
+        android:id="@+id/tv_reviewPesawat_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -18,10 +18,10 @@
         android:textStyle="bold"
         android:textColor="#394152"/>
     <LinearLayout
-        android:id="@+id/ll_pesan_data_pesawat"
+        android:id="@+id/ll_reviewPesawat_data_pesawat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_pesan_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_reviewPesawat_detail"
         android:orientation="vertical"
         android:padding="10dp"
         android:background="#fff">
@@ -30,36 +30,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/tv_pesan_namaMaskapai"
+                android:id="@+id/tv_reviewPesawat_namaMaskapai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Garuda Indonesia"
                 android:textColor="#000"
                 android:textSize="18sp"/>
             <ImageView
-                android:id="@+id/iv_pesan_logoMaskapai"
+                android:id="@+id/iv_reviewPesawat_logoMaskapai"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
-                app:layout_constraintLeft_toRightOf="@+id/tv_pesan_namaMaskapai"
+                app:layout_constraintLeft_toRightOf="@+id/tv_reviewPesawat_namaMaskapai"
                 android:src="@drawable/garuda"/>
             <TextView
-                android:id="@+id/tv_pesan_waktuBerangkat"
+                android:id="@+id/tv_reviewPesawat_waktuBerangkat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:layout_marginRight="10dp"
-                app:layout_constraintRight_toLeftOf="@+id/iv_plane"
+                app:layout_constraintRight_toLeftOf="@+id/iv_reviewPesawat_plane"
                 android:text="08:20"/>
             <ImageView
-                android:id="@+id/iv_plane"
+                android:id="@+id/iv_reviewPesawat_plane"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
-                app:layout_constraintRight_toLeftOf="@+id/tv_pesan_waktuSampai"
+                app:layout_constraintRight_toLeftOf="@+id/tv_reviewPesawat_waktuSampai"
                 android:src="@drawable/ic_plane"/>
             <TextView
-                android:id="@+id/tv_pesan_waktuSampai"
+                android:id="@+id/tv_reviewPesawat_waktuSampai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
@@ -106,7 +106,7 @@
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/tv_pesan_tgl"
+                        android:id="@+id/tv_reviewPesawat_tgl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
@@ -118,7 +118,7 @@
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/tv_pesan_bandaraAsal"
+                        android:id="@+id/tv_reviewPesawat_bandaraAsal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
@@ -128,6 +128,7 @@
                         android:layout_height="wrap_content"
                         android:text=" "/>
                     <TextView
+                        android:id="@+id/tv_reviewPesawat_terminalAsal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
@@ -139,7 +140,7 @@
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/tv_pesan_bandaraTujuan"
+                        android:id="@+id/tv_reviewPesawat_bandaraTujuan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
@@ -149,6 +150,7 @@
                         android:layout_height="wrap_content"
                         android:text=" "/>
                     <TextView
+                        android:id="@+id/tv_reviewPesawat_terminalTujuan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
@@ -158,7 +160,7 @@
         </LinearLayout>
     </LinearLayout>
     <TextView
-        android:id="@+id/tv_pesan_data_pemesan"
+        android:id="@+id/tv_reviewPesawat_data_pemesan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -166,12 +168,12 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#394152"
-        app:layout_constraintTop_toBottomOf="@id/ll_pesan_data_pesawat"/>
+        app:layout_constraintTop_toBottomOf="@id/ll_reviewPesawat_data_pesawat"/>
     <LinearLayout
-        android:id="@+id/ll_pesan_data_pemesan"
+        android:id="@+id/ll_reviewPesawat_data_pemesan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_pesan_data_pemesan"
+        app:layout_constraintTop_toBottomOf="@id/tv_reviewPesawat_data_pemesan"
         android:orientation="vertical"
         android:padding="10dp"
         android:background="#fff">
@@ -181,6 +183,7 @@
             android:text="Nama Pemesan"
             android:textSize="14sp"/>
         <TextView
+            android:id="@+id/tv_reviewPesawat_namaPemesan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -202,6 +205,7 @@
             android:layout_marginTop="5dp"
             android:textSize="14sp"/>
         <TextView
+            android:id="@+id/tv_reviewPesawat_nomorHp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -218,6 +222,7 @@
             android:layout_marginTop="5dp"
             android:textSize="14sp"/>
         <TextView
+            android:id="@+id/tv_reviewPesawat_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -235,7 +240,7 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:background="#fff"
-        app:layout_constraintTop_toBottomOf="@id/ll_pesan_data_pemesan">
+        app:layout_constraintTop_toBottomOf="@id/ll_reviewPesawat_data_pemesan">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -245,21 +250,21 @@
             android:textStyle="bold"
             android:textColor="#394152"/>
         <TextView
-            android:id="@+id/tv_pesanPenumpang_hitung"
+            android:id="@+id/tv_reviewPenumpang_hitung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toLeftOf="@id/tv_hotel_simbol_kali"
+            app:layout_constraintRight_toLeftOf="@id/tv_reviewPesawat_simbol_kali"
             android:layout_marginRight="10dp"
             android:text="1"/>
         <TextView
-            android:id="@+id/tv_hotel_simbol_kali"
+            android:id="@+id/tv_reviewPesawat_simbol_kali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toLeftOf="@id/ll_pesan_biaya"
+            app:layout_constraintRight_toLeftOf="@id/ll_reviewPesawat_biaya"
             android:layout_marginRight="10dp"
             android:text="x"/>
         <LinearLayout
-            android:id="@+id/ll_pesan_biaya"
+            android:id="@+id/ll_reviewPesawat_biaya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintRight_toRightOf="parent"
@@ -273,7 +278,7 @@
                     android:layout_height="wrap_content"
                     android:text="Rp "/>
                 <TextView
-                    android:id="@+id/tv_review_harga_hitung"
+                    android:id="@+id/tv_reviewPesawat_harga_hitung"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="300.000"/>
@@ -288,7 +293,7 @@
                     android:layout_height="wrap_content"
                     android:text="Rp "/>
                 <TextView
-                    android:id="@+id/tv_pesan_harga_total"
+                    android:id="@+id/tv_reviewPesawat_harga_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="300.000"/>
@@ -296,7 +301,7 @@
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
     <Button
-        android:id="@+id/b_pesan_detail_pesanan"
+        android:id="@+id/b_reviewPesawat_detail_pesanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

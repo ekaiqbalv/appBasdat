@@ -4,16 +4,17 @@ import java.io.Serializable;
 
 public class Pesawat implements Serializable {
     private int id_pesawat,imageMaskapai;
-    private String nama_Maskapai,waktuBerangkat,waktuSampai,kotaAsal,bandaraAsal,bandaraAsalSingkat,terminalAsal,kotaTujuan,bandaraTujuan,
+    private String nama_Maskapai,tanggal,waktuBerangkat,waktuSampai,kotaAsal,bandaraAsal,bandaraAsalSingkat,terminalAsal,kotaTujuan,bandaraTujuan,
             bandaraTujuanSingkat,terminalTujuan,nomorPenerbangan,durasi, jenisPesawat, layoutKursi, jarakKursi, kabin, bagasi, kuota, harga;
 
-    public Pesawat(int id_pesawat, int imageMaskapai, String nama_Maskapai, String waktuBerangkat, String waktuSampai,
+    public Pesawat(int id_pesawat, int imageMaskapai, String nama_Maskapai, String tanggal, String waktuBerangkat, String waktuSampai,
                    String kotaAsal, String bandaraAsal,String bandaraAsalSingkat,String terminalAsal, String kotaTujuan, String bandaraTujuan,
                    String bandaraTujuanSingkat, String terminalTujuan, String nomorPenerbangan, String durasi, String jenisPesawat, String layoutKursi,
                    String jarakKursi, String kabin, String bagasi, String kuota, String harga) {
         this.id_pesawat = id_pesawat;
         this.imageMaskapai = imageMaskapai;
         this.nama_Maskapai = nama_Maskapai;
+        this.tanggal = tanggal;
         this.waktuBerangkat = waktuBerangkat;
         this.waktuSampai = waktuSampai;
         this.kotaAsal = kotaAsal;
@@ -46,6 +47,8 @@ public class Pesawat implements Serializable {
     public String getNama_Maskapai() {
         return nama_Maskapai;
     }
+
+    public String getTanggal() { return tanggal; }
 
     public String getWaktuBerangkat() {
         return waktuBerangkat;

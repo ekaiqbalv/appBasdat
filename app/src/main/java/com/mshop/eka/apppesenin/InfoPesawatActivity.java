@@ -42,6 +42,7 @@ public class InfoPesawatActivity extends AppCompatActivity {
         b_infoPesawat_lanjut = findViewById(R.id.b_infoPesawat_lanjut);
 
         final Pesawat itemPesawat = (Pesawat) getIntent().getSerializableExtra("pesawat");
+        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tv_namaMaskapai.setText(itemPesawat.getNama_Maskapai());
@@ -67,6 +68,7 @@ public class InfoPesawatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), PesanTiketPesawatActivity.class);
+                intent.putExtra("dataPesanPesawat",dataPesanPesawat);
                 intent.putExtra("pesawat", itemPesawat);
                 startActivity(intent);
             }
