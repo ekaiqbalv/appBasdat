@@ -127,22 +127,6 @@
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
                 android:gravity="center"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kamar Tersedia "/>
-                <TextView
-                    android:id="@+id/rv_tv_kamar_kuota"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="40"/>
-            </LinearLayout>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
     <View

@@ -11,33 +11,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 
 public class CheckoutBerhasilHotel extends AppCompatActivity {
-    ArrayList<PesanAktif> pesanAktifArrayList;
     Random random;
     int jumlahPembayaran;
-    String jumlahPembayaranString;
+    String jumlahPembayaranString, totalPembayaran;
 
     TextView tv_idTransaksi, tv_jumlahBayar, tv_noRek;
     ImageView iv_logo_bank;
     Button b_konfirmasi;
+
+    PesanHotel pesanHotel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_berhasil_hotel);
 
-        PesanAktif pesanAktif = new PesanAktif();
-
-        pesanAktifArrayList = new ArrayList<>();
-
         final Kamar kamar = (Kamar)getIntent().getSerializableExtra("kamar");
-        final PesanHotel dataPesan = (PesanHotel) getIntent().getSerializableExtra("dataPesan");
         final Hotel hotel = (Hotel) getIntent().getSerializableExtra("hotel");
         final PembayaranHotel pembayaranHotel = (PembayaranHotel) getIntent().getSerializableExtra("pembayaranHotel");
+        final DetailPemesanHotel detailPemesanHotel = (DetailPemesanHotel) getIntent().getSerializableExtra("pemesanHotel");
         random = new Random();
         tv_idTransaksi = findViewById(R.id.tv_idTransaksi);
         tv_jumlahBayar = findViewById(R.id.tv_jumlahBayar);
@@ -47,6 +43,7 @@ public class CheckoutBerhasilHotel extends AppCompatActivity {
 
         tv_idTransaksi.setText(Integer.toString(pembayaranHotel.getIdTransaksi()));
         jumlahPembayaran = (Integer.parseInt(pembayaranHotel.getTotalTagihan()))+random.nextInt(900) + 100;;
+        totalPembayaran = Integer.toString(jumlahPembayaran);
         jumlahPembayaranString = NumberFormat.getNumberInstance(Locale.GERMAN).format(jumlahPembayaran);
         tv_jumlahBayar.setText(jumlahPembayaranString);
 
@@ -70,25 +67,13 @@ public class CheckoutBerhasilHotel extends AppCompatActivity {
         b_konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //bingung gua pasing datanya biar bisa ditampilin di activitypesananaktif
-//                pesanAktif.setIdTransaksi(dataPesan.getIdTransaksi());
-//                pesanAktif.setNamaPemesan(dataPesan.getNamaPemesan());
-//                pesanAktif.setNamaPesanan(hotel.getNamaHotel());
-//                String daerah = hotel.getLokasiDaerah();
-//                String kota = hotel.getLokasiKota();
-//                String lokasi = daerah+", "+kota;
-//                pesanAktif.setLokasiAtauJam(lokasi);
-//                pesanAktif.setTglPesanan(dataPesan.getTanggal());
-//                pesanAktif.setDekripsiPesanan1(kamar.getNamaKamar());
-//                String maksTamu = kamar.getMakstamu();
-//                String deskripsi2 = "Maksimal Tamu "+maksTamu;
-//                pesanAktif.setDeskripsiPesanan2(deskripsi2);
-//                pesanAktif.setHargaPesanan(tv_jumlahBayar.getText().toString());
-                Context context = v.getContext();
-                Intent intent = new Intent(context, MainActivity.class);
-                Toast.makeText(context,"Terimakasih",Toast.LENGTH_SHORT).show();
-                Toast.makeText(context,"Pesanan Dalam Proses Verifikasi",Toast.LENGTH_SHORT).show();
-                startActivity(intent);
+            pembayaranHotel.setTotalTagihan(totalPembayaran);
+            pesanHotel = new PesanHotel(1, kamar.getIdKamar(), detailPemesanHotel.getIdPemesan(),pembayaranHotel.getIdTransaksi());
+            Context context = v.getContext();
+            Intent intent = new Intent(context, MainActivity.class);
+            Toast.makeText(context,"Terimakasih",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"Pesanan Dalam Proses Verifikasi",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
             }
         });
     }

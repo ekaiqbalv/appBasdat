@@ -23,8 +23,9 @@ public class ReviewPesanKamarHotelActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final Kamar kamar = (Kamar)getIntent().getSerializableExtra("kamar");
-        final PesanHotel dataPesan = (PesanHotel) getIntent().getSerializableExtra("dataPesan");
+        final CariHotel cariHotel = (CariHotel) getIntent().getSerializableExtra("dataPesanHotel");
         final Hotel hotel = (Hotel) getIntent().getSerializableExtra("hotel");
+        final DetailPemesanHotel detailPemesanHotel = (DetailPemesanHotel) getIntent().getSerializableExtra("pemesanHotel");
 
         tv_namaHotel = findViewById(R.id.tv_reviewKamar_namaHotel);
         tv_lokasiDaerah = findViewById(R.id.tv_reviewKamar_lokasiDaerah);
@@ -45,10 +46,10 @@ public class ReviewPesanKamarHotelActivity extends AppCompatActivity {
         tv_namaHotel.setText(hotel.getNamaHotel());
         tv_lokasiDaerah.setText(hotel.getLokasiDaerah());
         tv_lokasiKota.setText(hotel.getLokasiKota());
-//        tv_tgl.setText(dataPesan.getTanggal());
-//        tv_durasiInap.setText(dataPesan.getDurasi());
+        tv_tgl.setText(kamar.getTanggal());
+        tv_durasiInap.setText(cariHotel.getDurasiInap());
         tv_namaKamar.setText(kamar.getNamaKamar());
-//        tv_maksTamu.setText(kamar.getMakstamu());
+        tv_maksTamu.setText(kamar.getMaksTamu());
         tv_durasiHitung.setText(tv_durasiInap.getText());
         tv_hargaHitung.setText(kamar.getHarga());
         durasiInap = Integer.parseInt(tv_durasiInap.getText().toString());
@@ -56,19 +57,18 @@ public class ReviewPesanKamarHotelActivity extends AppCompatActivity {
         hargaTotalInt = durasiInap*hargaInap;
         hargaTotalString = Integer.toString(hargaTotalInt);
         tv_hargaTotal.setText(hargaTotalString);
-//        tv_namaPemesan.setText(dataPesan.getNamaPemesan());
-//        tv_nomor.setText(dataPesan.getNomorHp());
-//        tv_email.setText(dataPesan.getEmail());
+        tv_namaPemesan.setText(detailPemesanHotel.getNamaPemesan());
+        tv_nomor.setText(detailPemesanHotel.getNomorHpPemesan());
+        tv_email.setText(detailPemesanHotel.getEmailPemesan());
 
         b_hotel_detail_pesanan_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String hargaTotal = tv_hargaTotal.getText().toString();
-//                dataPesan.setTotalBiaya(hargaTotal);
                 Intent intent = new Intent(getBaseContext(), MetodePembayaranActivity.class);
-                intent.putExtra("dataPesan",dataPesan);
                 intent.putExtra("kamar",kamar);
                 intent.putExtra("hotel", hotel);
+                intent.putExtra("pemesanHotel",detailPemesanHotel);
+                intent.putExtra("hargaHotel",hargaTotalString);
                 startActivity(intent);
             }
         });

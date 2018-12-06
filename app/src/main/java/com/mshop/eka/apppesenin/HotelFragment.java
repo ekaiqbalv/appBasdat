@@ -21,6 +21,8 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class HotelFragment extends Fragment{
+    CariHotel cariHotel;
+
     String lokasi, tanggal;
     String dataLokasi,dataTanggal,dataDurasi;
 
@@ -73,7 +75,7 @@ public class HotelFragment extends Fragment{
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        final PesanHotel pesanHotel = new PesanHotel();
+        cariHotel = new CariHotel();
 
         ll_hotel_lokasi = view.findViewById(R.id.fragment_hotel_ll_lokasi);
         ll_hotel_tanggal = view.findViewById(R.id.fragment_hotel_ll_tanggal);
@@ -116,11 +118,11 @@ public class HotelFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),DaftarHotelActivity.class);
-//                pesanHotel.setIdTransaksi(1);
-//                pesanHotel.setLokasiKota(dataLokasi);
-//                pesanHotel.setTanggal(dataTanggal);
-//                pesanHotel.setDurasi(dataDurasi);
-//                intent.putExtra("dataPesan", pesanHotel);
+                cariHotel.setIdCari(1);
+                cariHotel.setLokasiHotel(dataLokasi);
+                cariHotel.setTanggalInap(dataTanggal);
+                cariHotel.setDurasiInap(dataDurasi);
+                intent.putExtra("dataPesanHotel", cariHotel);
                 startActivity(intent);
             }
         });

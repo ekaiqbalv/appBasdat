@@ -4,15 +4,16 @@ import java.io.Serializable;
 
 public class Kamar implements Serializable {
     private int idKamar, idHotel;
-    private String namaKamar, maksTamu, sarapan, wifi, harga;
+    private String namaKamar, maksTamu, sarapan, wifi, tanggal, harga;
 
-    public Kamar(int idKamar, int idHotel, String namaKamar, String maksTamu, String sarapan, String wifi, String harga) {
+    public Kamar(int idKamar, int idHotel, String namaKamar, String maksTamu, String sarapan, String wifi, String tanggal ,String harga) {
         this.idKamar = idKamar;
         this.idHotel = idHotel;
         this.namaKamar = namaKamar;
         this.maksTamu = maksTamu;
         this.sarapan = sarapan;
         this.wifi = wifi;
+        this.tanggal = tanggal;
         this.harga = harga;
     }
 
@@ -62,6 +63,14 @@ public class Kamar implements Serializable {
 
     public void setWifi(String wifi) {
         this.wifi = wifi;
+    }
+
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
     }
 
     public String getHarga() {

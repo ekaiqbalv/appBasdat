@@ -6,7 +6,12 @@ public class PembayaranHotel implements Serializable {
     int idTransaksi;
     String totalTagihan, namaBank, nomorRekening, namaRekening;
 
-    public PembayaranHotel() {
+    public PembayaranHotel(int idTransaksi, String totalTagihan, String namaBank, String nomorRekening, String namaRekening) {
+        this.idTransaksi = idTransaksi;
+        this.totalTagihan = totalTagihan;
+        this.namaBank = namaBank;
+        this.nomorRekening = nomorRekening;
+        this.namaRekening = namaRekening;
     }
 
     public int getIdTransaksi() {

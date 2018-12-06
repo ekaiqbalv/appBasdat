@@ -17,17 +17,17 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
 
     private Context mContext;
     private List<Hotel> itemHotels;
-    private PesanHotel dataPesan;
+    private CariHotel cariHotel;
     int id;
 
     public int getId() {
         return id;
     }
 
-    public HotelAdapter(Context mContext, List<Hotel> itemHotels, PesanHotel dataPesan) {
+    public HotelAdapter(Context mContext, List<Hotel> itemHotels, CariHotel cariHotel) {
         this.mContext = mContext;
         this.itemHotels = itemHotels;
-        this.dataPesan = dataPesan;
+        this.cariHotel = cariHotel;
     }
     public HotelAdapter() {
     }
@@ -45,19 +45,17 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
         Hotel recyclerItemHotel = itemHotels.get(position);
         //-----------------------------------------------------------
         holder.textViewNamaHotel.setText(recyclerItemHotel.getNamaHotel());
-//        holder.textViewRating.setText(recyclerItemHotel.getRating());
+        holder.textViewRating.setText(recyclerItemHotel.getBintangHotel());
         holder.textViewLokasiDaerah.setText(recyclerItemHotel.getLokasiDaerah());
         holder.textViewLokasiKota.setText(recyclerItemHotel.getLokasiKota());
-//        holder.textViewHarga.setText(recyclerItemHotel.getHarga());
-
-//        holder.imageView.setImageDrawable(mContext.getResources().getDrawable(recyclerItemHotel.getGambar()));
+        holder.textViewHarga.setText(recyclerItemHotel.getHarga());
 
         holder.ll_hotel_daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = mContext;
                 Intent intent = new Intent(context, DetailHotelActivity.class);
-                intent.putExtra("dataPesan",dataPesan);
+                intent.putExtra("dataPesanHotel",cariHotel);
                 intent.putExtra("hotel", itemHotels.get(position));
                 context.startActivity(intent);
             }
@@ -69,7 +67,6 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
         return itemHotels.size();
     }
 
-    //ViewHoldernya
     class HotelViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textViewNamaHotel,textViewRating,textViewLokasiDaerah,textViewLokasiKota,textViewHarga;

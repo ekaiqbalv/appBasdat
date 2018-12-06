@@ -3,11 +3,11 @@ package com.mshop.eka.apppesenin;
 import java.io.Serializable;
 
 public class PesanHotel implements Serializable {
-    private int idTransaksi, idKamarTersedia,idPemesan, idPembayaran;
+    private int idTransaksi, idKamar,idPemesan, idPembayaran;
 
-    public PesanHotel(int idTransaksi, int idKamarTersedia, int idPemesan, int idPembayaran) {
+    public PesanHotel(int idTransaksi, int idKamar, int idPemesan, int idPembayaran) {
         this.idTransaksi = idTransaksi;
-        this.idKamarTersedia = idKamarTersedia;
+        this.idKamar = idKamar;
         this.idPemesan = idPemesan;
         this.idPembayaran = idPembayaran;
     }
@@ -20,12 +20,12 @@ public class PesanHotel implements Serializable {
         this.idTransaksi = idTransaksi;
     }
 
-    public int getIdKamarTersedia() {
-        return idKamarTersedia;
+    public int getIdKamar() {
+        return idKamar;
     }
 
-    public void setIdKamarTersedia(int idKamarTersedia) {
-        this.idKamarTersedia = idKamarTersedia;
+    public void setIdKamar(int idKamar) {
+        this.idKamar = idKamar;
     }
 
     public int getIdPemesan() {

@@ -16,13 +16,13 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
     private Context mCtx;
     private List<Kamar> kamarList;
     private Hotel hotel;
-    private PesanHotel dataPesan;
+    private CariHotel cariHotel;
 
-    public KamarAdapter(Context mCtx, List<Kamar> kamarList, Hotel hotel, PesanHotel dataPesan) {
+    public KamarAdapter(Context mCtx, List<Kamar> kamarList, Hotel hotel, CariHotel cariHotel) {
         this.mCtx = mCtx;
         this.kamarList = kamarList;
         this.hotel = hotel;
-        this.dataPesan = dataPesan;
+        this.cariHotel = cariHotel;
     }
 
     @NonNull
@@ -38,11 +38,10 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
         final Kamar kamar = kamarList.get(position);
 
         holder.textViewNamaKamar.setText(kamar.getNamaKamar());
-//        holder.textViewMakstamu.setText(kamar.getMakstamu());
+        holder.textViewMakstamu.setText(kamar.getMaksTamu());
         holder.textViewSarapan.setText(kamar.getSarapan());
         holder.textViewWifi.setText(kamar.getWifi());
         holder.textViewHarga.setText(kamar.getHarga());
-//        holder.textViewKuota.setText(kamar.getKuota());
 
         holder.cl_item.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +49,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
                 Context context = v.getContext();
                 Intent intent = new Intent(context, PesanKamarHotelActivity.class);
                 intent.putExtra("hotel",hotel);
-                intent.putExtra("dataPesan",dataPesan);
+                intent.putExtra("dataPesanHotel",cariHotel);
                 intent.putExtra("kamar", kamar);
                 context.startActivity(intent);
             }
@@ -74,7 +73,6 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
             textViewSarapan = itemView.findViewById(R.id.rv_tv_kamar_sarapan);
             textViewWifi = itemView.findViewById(R.id.rv_tv_kamar_wifi);
             textViewHarga = itemView.findViewById(R.id.rv_tv_kamar_harga);
-            textViewKuota = itemView.findViewById(R.id.rv_tv_kamar_kuota);
             cl_item = itemView.findViewById(R.id.c_layout_hotel_kamar);
         }
     }

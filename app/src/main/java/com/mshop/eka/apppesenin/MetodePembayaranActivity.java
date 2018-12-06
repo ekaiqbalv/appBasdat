@@ -13,7 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MetodePembayaranActivity extends AppCompatActivity {
-    String namaBank;
+    PembayaranHotel pembayaranHotel;
+    String namaBank, nomorRekening,namaPemilikRekening;
     TextView tv_totaltagihan_angka, tv_penjelasanmetodepembayaran2;
     EditText et_nopemilikrekening, et_namapemilikrekening;
     Button b_metode_pembayaran;
@@ -26,9 +27,9 @@ public class MetodePembayaranActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final Kamar kamar = (Kamar)getIntent().getSerializableExtra("kamar");
-        final PesanHotel dataPesan = (PesanHotel) getIntent().getSerializableExtra("dataPesan");
         final Hotel hotel = (Hotel) getIntent().getSerializableExtra("hotel");
-        final PembayaranHotel pembayaranHotel = new PembayaranHotel();
+        final DetailPemesanHotel detailPemesanHotel = (DetailPemesanHotel) getIntent().getSerializableExtra("pemesanHotel");
+        final String hargaTotal = getIntent().getStringExtra("hargaHotel");
 
         final String[] bank = getResources().getStringArray(R.array.bank);
         Spinner spinner = findViewById(R.id.spinner_bank);
@@ -46,26 +47,23 @@ public class MetodePembayaranActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 namaBank = bank[position];
-                pembayaranHotel.setNamaBank(namaBank);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-        pembayaranHotel.setIdTransaksi(dataPesan.getIdTransaksi());
-//        pembayaranHotel.setTotalTagihan(dataPesan.getTotalBiaya());
-        tv_totaltagihan_angka.setText(pembayaranHotel.getTotalTagihan());
+        tv_totaltagihan_angka.setText(hargaTotal);
 
         b_metode_pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pembayaranHotel.setNomorRekening(et_nopemilikrekening.getText().toString());
-                pembayaranHotel.setNamaRekening(et_namapemilikrekening.getText().toString());
+                nomorRekening = et_nopemilikrekening.getText().toString();
+                namaPemilikRekening = et_namapemilikrekening.getText().toString();
+                pembayaranHotel = new PembayaranHotel(1,hargaTotal,namaBank,nomorRekening,namaPemilikRekening);
                 Context context = v.getContext();
                 Intent intent = new Intent(context, CheckoutBerhasilHotel.class);
                 intent.putExtra("pembayaranHotel",pembayaranHotel);
-                intent.putExtra("dataPesan",dataPesan);
+                intent.putExtra("pemesanHotel",detailPemesanHotel);
                 intent.putExtra("kamar",kamar);
                 intent.putExtra("hotel", hotel);
                 startActivity(intent);

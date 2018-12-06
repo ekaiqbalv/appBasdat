@@ -17,22 +17,23 @@ public class KamarHotelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kamar_hotel);
 
-        Hotel currentHotel = (Hotel) getIntent().getSerializableExtra("hotel");
-        PesanHotel dataPesan = (PesanHotel) getIntent().getSerializableExtra("dataPesan");
+        final Hotel currentHotel = (Hotel) getIntent().getSerializableExtra("hotel");
+        final CariHotel cariHotel = (CariHotel) getIntent().getSerializableExtra("dataPesanHotel");
+
+        ArrayList<Kamar> filteredKamar = new ArrayList<>();
+
+        for (Kamar kamar : currentHotel.getKamarList()){
+            if(kamar.getTanggal().equalsIgnoreCase(cariHotel.getTanggalInap())){
+                filteredKamar.add(kamar);
+            }
+        }
+
 
         recyclerView = findViewById(R.id.rv_layout_kamar);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ArrayList<Kamar> filteredKamar = new ArrayList<>();
-
-        for (Kamar kamar : currentHotel.getKamarList()){
-//            if(kamar.getTanggal().equalsIgnoreCase(dataPesan.getTanggal())){
-//                filteredKamar.add(kamar);
-//            }
-        }
-
-        recyclerView.setAdapter(new KamarAdapter(getBaseContext(), filteredKamar,currentHotel,dataPesan));
+        recyclerView.setAdapter(new KamarAdapter(getBaseContext(), filteredKamar,currentHotel,cariHotel));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

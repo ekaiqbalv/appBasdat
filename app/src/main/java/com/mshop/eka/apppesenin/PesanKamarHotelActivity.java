@@ -10,7 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class PesanKamarHotelActivity extends AppCompatActivity {
+    DetailPemesanHotel detailPemesanHotel;
+
     String hargaTotalString;
+    String namaPemesan, nomorHPPemesan, emailPemesan;
 
     Button b_hotel_detail_pesanan;
     TextView tv_namaHotel,tv_lokasiDaerah, tv_lokasiKota, tv_tgl, tv_durasiInap, tv_namaKamar, tv_maksTamu, tv_durasiHitung, tv_hargaHitung, tv_hargaTotal;
@@ -23,7 +26,7 @@ public class PesanKamarHotelActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         final Kamar kamar = (Kamar)getIntent().getSerializableExtra("kamar");
-        final PesanHotel dataPesan = (PesanHotel) getIntent().getSerializableExtra("dataPesan");
+        final CariHotel cariHotel = (CariHotel) getIntent().getSerializableExtra("dataPesanHotel");
         final Hotel hotel = (Hotel) getIntent().getSerializableExtra("hotel");
         b_hotel_detail_pesanan = findViewById(R.id.b_hotel_detail_pesanan);
         tv_namaHotel = findViewById(R.id.tv_pesanKamar_namaHotel);
@@ -43,10 +46,10 @@ public class PesanKamarHotelActivity extends AppCompatActivity {
         tv_namaHotel.setText(hotel.getNamaHotel());
         tv_lokasiDaerah.setText(hotel.getLokasiDaerah());
         tv_lokasiKota.setText(hotel.getLokasiKota());
-//        tv_durasiInap.setText(dataPesan.getDurasi());
+        tv_durasiInap.setText(cariHotel.getDurasiInap());
         tv_namaKamar.setText(kamar.getNamaKamar());
-//        tv_tgl.setText(dataPesan.getTanggal());
-//        tv_maksTamu.setText(kamar.getMakstamu());
+        tv_tgl.setText(kamar.getTanggal());
+        tv_maksTamu.setText(kamar.getMaksTamu());
         tv_durasiHitung.setText(tv_durasiInap.getText());
         tv_hargaHitung.setText(kamar.getHarga());
         int durasiInap = Integer.parseInt(tv_durasiInap.getText().toString());
@@ -58,14 +61,16 @@ public class PesanKamarHotelActivity extends AppCompatActivity {
         b_hotel_detail_pesanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                dataPesan.setNamaPemesan(et_namaPemesan.getText().toString());
-//                dataPesan.setNomorHp(et_nomor.getText().toString());
-//                dataPesan.setEmail(et_email.getText().toString());
+                namaPemesan = et_namaPemesan.getText().toString();
+                nomorHPPemesan = et_nomor.getText().toString();
+                emailPemesan = et_email.getText().toString();
+                detailPemesanHotel = new DetailPemesanHotel(1,namaPemesan,nomorHPPemesan,emailPemesan);
                 Context context = v.getContext();
                 Intent intent = new Intent(context, ReviewPesanKamarHotelActivity.class);
                 intent.putExtra("hotel",hotel);
-                intent.putExtra("dataPesan",dataPesan);
+                intent.putExtra("dataPesanHotel",cariHotel);
                 intent.putExtra("kamar", kamar);
+                intent.putExtra("pemesanHotel",detailPemesanHotel);
                 context.startActivity(intent);
             }
         });

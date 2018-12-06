@@ -42,7 +42,7 @@
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
                 app:layout_constraintLeft_toRightOf="@+id/tv_reviewPesawat_namaMaskapai"
-                android:src="@drawable/garuda"/>
+                android:src="@drawable/ic_pesawat"/>
             <TextView
                 android:id="@+id/tv_reviewPesawat_waktuBerangkat"
                 android:layout_width="wrap_content"

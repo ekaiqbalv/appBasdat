@@ -4,17 +4,17 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Hotel implements Serializable {
-    private int idHotel, gambarHotel;
-    private String namaHotel, bintangHotel, lokasiDaerah, lokasiKota, deskripsiHotel, fasilitasHotel;
+    private int idHotel;
+    private String namaHotel, bintangHotel, lokasiDaerah, lokasiKota, harga, deskripsiHotel, fasilitasHotel;
     private ArrayList<Kamar> kamarList;
 
-    public Hotel(int idHotel, int gambarHotel, String namaHotel, String bintangHotel, String lokasiDaerah, String lokasiKota, String deskripsiHotel, String fasilitasHotel) {
+    public Hotel(int idHotel, String namaHotel, String bintangHotel, String lokasiDaerah, String lokasiKota, String harga, String deskripsiHotel, String fasilitasHotel) {
         this.idHotel = idHotel;
-        this.gambarHotel = gambarHotel;
         this.namaHotel = namaHotel;
         this.bintangHotel = bintangHotel;
         this.lokasiDaerah = lokasiDaerah;
         this.lokasiKota = lokasiKota;
+        this.harga = harga;
         this.deskripsiHotel = deskripsiHotel;
         this.fasilitasHotel = fasilitasHotel;
         kamarList = new ArrayList<>();
@@ -26,14 +26,6 @@ public class Hotel implements Serializable {
 
     public void setIdHotel(int idHotel) {
         this.idHotel = idHotel;
-    }
-
-    public int getGambarHotel() {
-        return gambarHotel;
-    }
-
-    public void setGambarHotel(int gambarHotel) {
-        this.gambarHotel = gambarHotel;
     }
 
     public String getNamaHotel() {
@@ -68,6 +60,14 @@ public class Hotel implements Serializable {
         this.lokasiKota = lokasiKota;
     }
 
+    public String getHarga() {
+        return harga;
+    }
+
+    public void setHarga(String harga) {
+        this.harga = harga;
+    }
+
     public String getDeskripsiHotel() {
         return deskripsiHotel;
     }
@@ -90,7 +90,7 @@ public class Hotel implements Serializable {
 
 //    void addKamar (Kamar kamar){ kamarList.add(kamar); }
 //
-//    void setKamar(ArrayList<Kamar> kamarList){ this.kamarList = kamarList; }
+    void setKamar(ArrayList<Kamar> kamarList){ this.kamarList = kamarList; }
 
     public ArrayList<Kamar> getKamarList() {
         return kamarList;
