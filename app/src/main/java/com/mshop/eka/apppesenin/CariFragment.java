@@ -49,9 +49,6 @@ public class CariFragment extends Fragment implements BottomNavigationView.OnNav
             case R.id.navigation_hotel:
                 fragment = new HotelFragment();
                 break;
-            case R.id.navigation_kereta:
-                fragment = new TiketKeretaApiFragment();
-                break;
             case R.id.navigation_pesawat:
                 fragment = new TiketPesawatFragment();
                 break;

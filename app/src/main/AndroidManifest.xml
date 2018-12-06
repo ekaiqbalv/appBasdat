@@ -13,6 +13,13 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -72,9 +79,10 @@
         <activity
             android:name=".ReviewPesanTiketPesawatActivity"
             android:label="Review Pemesanan" />
-        <activity android:name=".MetodePembayaranPesawatActivity"
-            android:label="Metode Pembayaran"/>
-        <activity android:name=".CheckoutBerhasilPesawat"></activity>
+        <activity
+            android:name=".MetodePembayaranPesawatActivity"
+            android:label="Metode Pembayaran" />
+        <activity android:name=".CheckoutBerhasilPesawat" />
     </application>
 
 </manifest>
