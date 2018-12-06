@@ -73,7 +73,7 @@ public class HotelFragment extends Fragment{
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final PesanHotel pesanHotel = new PesanHotel();
+//        final PesanHotel pesanHotel = new PesanHotel();
 
         ll_hotel_lokasi = view.findViewById(R.id.fragment_hotel_ll_lokasi);
         ll_hotel_tanggal = view.findViewById(R.id.fragment_hotel_ll_tanggal);
@@ -116,11 +116,11 @@ public class HotelFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),DaftarHotelActivity.class);
-                pesanHotel.setIdTransaksi(1);
-                pesanHotel.setLokasiKota(dataLokasi);
-                pesanHotel.setTanggal(dataTanggal);
-                pesanHotel.setDurasi(dataDurasi);
-                intent.putExtra("dataPesan", pesanHotel);
+//                pesanHotel.setIdTransaksi(1);
+//                pesanHotel.setLokasiKota(dataLokasi);
+//                pesanHotel.setTanggal(dataTanggal);
+//                pesanHotel.setDurasi(dataDurasi);
+//                intent.putExtra("dataPesan", pesanHotel);
                 startActivity(intent);
             }
         });

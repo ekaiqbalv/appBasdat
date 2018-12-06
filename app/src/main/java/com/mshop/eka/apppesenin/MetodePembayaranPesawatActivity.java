@@ -13,7 +13,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MetodePembayaranPesawatActivity extends AppCompatActivity {
-    String namaBank;
+    PembayaranPesawat pembayaranPesawat;
+
+    String namaBank, nomorRekening,namaPemilikRekening;
     TextView tv_totaltagihan_angka, tv_penjelasanmetodepembayaran2;
     EditText et_nopemilikrekening, et_namapemilikrekening;
     Button b_metode_pembayaran;
@@ -23,9 +25,9 @@ public class MetodePembayaranPesawatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metode_pembayaran_pesawat);
 
-        final Pesawat itemPesawat = (Pesawat) getIntent().getSerializableExtra("pesawat");
-        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
-        final  PembayaranPesawat pembayaranPesawat = new PembayaranPesawat();
+        final Penerbangan penerbangan = (Penerbangan) getIntent().getSerializableExtra("pesawat");
+        final DetailPemesanPesawat detailPemesanPesawat = (DetailPemesanPesawat) getIntent().getSerializableExtra("pemesanPesawat");
+        final String hargaTotal = getIntent().getStringExtra("hargaPesawat");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -41,29 +43,27 @@ public class MetodePembayaranPesawatActivity extends AppCompatActivity {
         tv_penjelasanmetodepembayaran2 = findViewById(R.id.tv_penjelasanmetodepembayaran2Pesawat);
         b_metode_pembayaran = findViewById(R.id.b_metode_pembayaranPesawat);
 
-        pembayaranPesawat.setIdTransaksi(dataPesanPesawat.getIdTransaksi());
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 namaBank = bank[position];
-                pembayaranPesawat.setNamaBank(namaBank);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        pembayaranPesawat.setTotalTagihan(dataPesanPesawat.getTotalBiaya());
-        tv_totaltagihan_angka.setText(pembayaranPesawat.getTotalTagihan());
+        tv_totaltagihan_angka.setText(hargaTotal);
 
         b_metode_pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pembayaranPesawat.setNomorRekening(et_nopemilikrekening.getText().toString());
-                pembayaranPesawat.setNamaRekening(et_namapemilikrekening.getText().toString());
+            nomorRekening = et_nopemilikrekening.getText().toString();
+            namaPemilikRekening = et_namapemilikrekening.getText().toString();
+            pembayaranPesawat = new PembayaranPesawat(1,hargaTotal,namaBank,nomorRekening,namaPemilikRekening);
                 Context context = v.getContext();
                 Intent intent = new Intent(context, CheckoutBerhasilPesawat.class);
-                intent.putExtra("dataPesanPesawat",dataPesanPesawat);
-                intent.putExtra("pesawat", itemPesawat);
+                intent.putExtra("pesawat", penerbangan);
+                intent.putExtra("pemesanPesawat",detailPemesanPesawat);
                 intent.putExtra("pembayaranPesawat", pembayaranPesawat);
                 startActivity(intent);
             }

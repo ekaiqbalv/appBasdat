@@ -41,35 +41,35 @@ public class InfoPesawatActivity extends AppCompatActivity {
         tv_bagasi = findViewById(R.id.tv_info_bagasi);
         b_infoPesawat_lanjut = findViewById(R.id.b_infoPesawat_lanjut);
 
-        final Pesawat itemPesawat = (Pesawat) getIntent().getSerializableExtra("pesawat");
-        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
+        final Penerbangan penerbangan = (Penerbangan) getIntent().getSerializableExtra("pesawat");
+        final CariPesawat cariPesawat = (CariPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        tv_namaMaskapai.setText(itemPesawat.getNama_Maskapai());
-        iv_logoMaskapai.setImageResource(itemPesawat.getImageMaskapai());
-        tv_nomorPenerbangan.setText(itemPesawat.getNomorPenerbangan());
-        tv_kotaAsal.setText(itemPesawat.getKotaAsal());
-        tv_waktuBerangkat.setText(itemPesawat.getWaktuBerangkat());
-        tv_bandaraAsal.setText(itemPesawat.getBandaraAsal());
-        tv_bandaraAsalSingkat.setText(itemPesawat.getBandaraAsalSingkat());
-        tv_terminalAsal.setText(itemPesawat.getTerminalAsal());
-        tv_durasiPenerbangan.setText(itemPesawat.getDurasi());
-        tv_kotaTujuan.setText(itemPesawat.getKotaTujuan());
-        tv_waktuSampai.setText(itemPesawat.getWaktuSampai());
-        tv_bandaraTujuan.setText(itemPesawat.getBandaraTujuan());
-        tv_bandaraTujuanSingkat.setText(itemPesawat.getBandaraTujuanSingkat());
-        tv_terminalTujuan.setText(itemPesawat.getTerminalTujuan());
-        tv_jenisPesawat.setText(itemPesawat.getJenisPesawat());
-        tv_susunanKursi.setText(itemPesawat.getLayoutKursi());
-        tv_jarakKursi.setText(itemPesawat.getJarakKursi());
-        tv_kabin.setText(itemPesawat.getKabin());
-        tv_bagasi.setText(itemPesawat.getBagasi());
+//        tv_namaMaskapai.setText(penerbangan.getNama_Maskapai());
+//        iv_logoMaskapai.setImageResource(penerbangan.getImageMaskapai());
+        tv_nomorPenerbangan.setText(penerbangan.getKodePenerbangan());
+        tv_kotaAsal.setText(penerbangan.getKotaKeberangkatan());
+        tv_waktuBerangkat.setText(penerbangan.getWaktuKeberangkatan());
+//        tv_bandaraAsal.setText(penerbangan.getBandaraAsal());
+//        tv_bandaraAsalSingkat.setText(penerbangan.getBandaraAsalSingkat());
+        tv_terminalAsal.setText(Integer.toString(penerbangan.getIdTerminalKeberangkatan()));
+        tv_durasiPenerbangan.setText(penerbangan.getDurasiPenerbangan());
+        tv_kotaTujuan.setText(penerbangan.getKotaKedatangan());
+        tv_waktuSampai.setText(penerbangan.getWaktuKedatangan());
+//        tv_bandaraTujuan.setText(penerbangan.getBandaraTujuan());
+//        tv_bandaraTujuanSingkat.setText(penerbangan.getBandaraTujuanSingkat());
+        tv_terminalTujuan.setText(Integer.toString(penerbangan.getIdTerminalKedatangan()));
+//        tv_jenisPesawat.setText(penerbangan.getJenisPesawat());
+//        tv_susunanKursi.setText(penerbangan.getLayoutKursi());
+//        tv_jarakKursi.setText(penerbangan.getJarakKursi());
+//        tv_kabin.setText(penerbangan.getKabin());
+//        tv_bagasi.setText(penerbangan.getBagasi());
         b_infoPesawat_lanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), PesanTiketPesawatActivity.class);
-                intent.putExtra("dataPesanPesawat",dataPesanPesawat);
-                intent.putExtra("pesawat", itemPesawat);
+                intent.putExtra("dataPesanPesawat",cariPesawat);
+                intent.putExtra("pesawat", penerbangan);
                 startActivity(intent);
             }
         });

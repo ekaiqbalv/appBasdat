@@ -3,43 +3,72 @@ package com.mshop.eka.apppesenin;
 import java.io.Serializable;
 
 public class Kamar implements Serializable {
-    private int idKamar;
-    private String namaKamar, makstamu, sarapan, wifi,harga, tanggal, kuota;
+    private int idKamar, idHotel;
+    private String namaKamar, maksTamu, sarapan, wifi, harga;
 
-    public Kamar(int idKamar, String namaKamar, String makstamu, String sarapan, String wifi, String harga, String tanggal, String kuota) {
+    public Kamar(int idKamar, int idHotel, String namaKamar, String maksTamu, String sarapan, String wifi, String harga) {
         this.idKamar = idKamar;
+        this.idHotel = idHotel;
         this.namaKamar = namaKamar;
-        this.makstamu = makstamu;
+        this.maksTamu = maksTamu;
         this.sarapan = sarapan;
         this.wifi = wifi;
         this.harga = harga;
-        this.tanggal = tanggal;
-        this.kuota = kuota;
     }
 
     public int getIdKamar() {
         return idKamar;
     }
 
+    public void setIdKamar(int idKamar) {
+        this.idKamar = idKamar;
+    }
+
+    public int getIdHotel() {
+        return idHotel;
+    }
+
+    public void setIdHotel(int idHotel) {
+        this.idHotel = idHotel;
+    }
+
     public String getNamaKamar() {
         return namaKamar;
     }
 
-    public String getMakstamu() {
-        return makstamu;
+    public void setNamaKamar(String namaKamar) {
+        this.namaKamar = namaKamar;
     }
 
-    public String getSarapan() { return sarapan; }
+    public String getMaksTamu() {
+        return maksTamu;
+    }
+
+    public void setMaksTamu(String maksTamu) {
+        this.maksTamu = maksTamu;
+    }
+
+    public String getSarapan() {
+        return sarapan;
+    }
+
+    public void setSarapan(String sarapan) {
+        this.sarapan = sarapan;
+    }
 
     public String getWifi() {
         return wifi;
+    }
+
+    public void setWifi(String wifi) {
+        this.wifi = wifi;
     }
 
     public String getHarga() {
         return harga;
     }
 
-    public String getTanggal() { return tanggal; }
-
-    public String getKuota() { return kuota; }
+    public void setHarga(String harga) {
+        this.harga = harga;
+    }
 }

@@ -3,114 +3,81 @@ package com.mshop.eka.apppesenin;
 import java.io.Serializable;
 
 public class Pesawat implements Serializable {
-    private int id_pesawat,imageMaskapai;
-    private String nama_Maskapai,tanggal,waktuBerangkat,waktuSampai,kotaAsal,bandaraAsal,bandaraAsalSingkat,terminalAsal,kotaTujuan,bandaraTujuan,
-            bandaraTujuanSingkat,terminalTujuan,nomorPenerbangan,durasi, jenisPesawat, layoutKursi, jarakKursi, kabin, bagasi, kuota, harga;
+    private int idPesawat;
+    private String kodeMaskapai, jenisPesawat, layoutKursi, jarakKursi, penyimpananKabin, penyimpananBagasi, maksimalPenumpang;
 
-    public Pesawat(int id_pesawat, int imageMaskapai, String nama_Maskapai, String tanggal, String waktuBerangkat, String waktuSampai,
-                   String kotaAsal, String bandaraAsal,String bandaraAsalSingkat,String terminalAsal, String kotaTujuan, String bandaraTujuan,
-                   String bandaraTujuanSingkat, String terminalTujuan, String nomorPenerbangan, String durasi, String jenisPesawat, String layoutKursi,
-                   String jarakKursi, String kabin, String bagasi, String kuota, String harga) {
-        this.id_pesawat = id_pesawat;
-        this.imageMaskapai = imageMaskapai;
-        this.nama_Maskapai = nama_Maskapai;
-        this.tanggal = tanggal;
-        this.waktuBerangkat = waktuBerangkat;
-        this.waktuSampai = waktuSampai;
-        this.kotaAsal = kotaAsal;
-        this.bandaraAsal = bandaraAsal;
-        this.bandaraAsalSingkat = bandaraAsalSingkat;
-        this.terminalAsal = terminalAsal;
-        this.kotaTujuan = kotaTujuan;
-        this.bandaraTujuan = bandaraTujuan;
-        this.bandaraTujuanSingkat = bandaraTujuanSingkat;
-        this.terminalTujuan = terminalTujuan;
-        this.nomorPenerbangan = nomorPenerbangan;
-        this.durasi = durasi;
+    public Pesawat(int idPesawat, String kodeMaskapai, String jenisPesawat, String layoutKursi, String jarakKursi, String penyimpananKabin, String penyimpananBagasi, String maksimalPenumpang) {
+        this.idPesawat = idPesawat;
+        this.kodeMaskapai = kodeMaskapai;
         this.jenisPesawat = jenisPesawat;
         this.layoutKursi = layoutKursi;
         this.jarakKursi = jarakKursi;
-        this.kabin = kabin;
-        this.bagasi = bagasi;
-        this.kuota = kuota;
-        this.harga = harga;
+        this.penyimpananKabin = penyimpananKabin;
+        this.penyimpananBagasi = penyimpananBagasi;
+        this.maksimalPenumpang = maksimalPenumpang;
     }
 
-    public int getId_pesawat() {
-        return id_pesawat;
+    public int getIdPesawat() {
+        return idPesawat;
     }
 
-    public int getImageMaskapai() {
-        return imageMaskapai;
+    public void setIdPesawat(int idPesawat) {
+        this.idPesawat = idPesawat;
     }
 
-    public String getNama_Maskapai() {
-        return nama_Maskapai;
+    public String getKodeMaskapai() {
+        return kodeMaskapai;
     }
 
-    public String getTanggal() { return tanggal; }
-
-    public String getWaktuBerangkat() {
-        return waktuBerangkat;
-    }
-
-    public String getWaktuSampai() { return waktuSampai; }
-
-    public String getKotaAsal() {
-        return kotaAsal;
-    }
-
-    public String getBandaraAsal() {
-        return bandaraAsal;
-    }
-
-    public String getBandaraAsalSingkat() { return bandaraAsalSingkat; }
-
-    public String getTerminalAsal() { return terminalAsal; }
-
-    public String getKotaTujuan() {
-        return kotaTujuan;
-    }
-
-    public String getBandaraTujuan() {
-        return bandaraTujuan;
-    }
-
-    public String getBandaraTujuanSingkat() { return bandaraTujuanSingkat; }
-
-    public String getTerminalTujuan() { return terminalTujuan; }
-
-    public String getNomorPenerbangan() { return nomorPenerbangan; }
-
-    public String getDurasi() {
-        return durasi;
+    public void setKodeMaskapai(String kodeMaskapai) {
+        this.kodeMaskapai = kodeMaskapai;
     }
 
     public String getJenisPesawat() {
         return jenisPesawat;
     }
 
+    public void setJenisPesawat(String jenisPesawat) {
+        this.jenisPesawat = jenisPesawat;
+    }
+
     public String getLayoutKursi() {
         return layoutKursi;
+    }
+
+    public void setLayoutKursi(String layoutKursi) {
+        this.layoutKursi = layoutKursi;
     }
 
     public String getJarakKursi() {
         return jarakKursi;
     }
 
-    public String getKabin() {
-        return kabin;
+    public void setJarakKursi(String jarakKursi) {
+        this.jarakKursi = jarakKursi;
     }
 
-    public String getBagasi() {
-        return bagasi;
+    public String getPenyimpananKabin() {
+        return penyimpananKabin;
     }
 
-    public String getKuota() {
-        return kuota;
+    public void setPenyimpananKabin(String penyimpananKabin) {
+        this.penyimpananKabin = penyimpananKabin;
     }
 
-    public String getHarga() {
-        return harga;
+    public String getPenyimpananBagasi() {
+        return penyimpananBagasi;
+    }
+
+    public void setPenyimpananBagasi(String penyimpananBagasi) {
+        this.penyimpananBagasi = penyimpananBagasi;
+    }
+
+    public String getMaksimalPenumpang() {
+        return maksimalPenumpang;
+    }
+
+    public void setMaksimalPenumpang(String maksimalPenumpang) {
+        this.maksimalPenumpang = maksimalPenumpang;
     }
 }

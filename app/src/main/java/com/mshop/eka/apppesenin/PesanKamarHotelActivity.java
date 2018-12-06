@@ -43,10 +43,10 @@ public class PesanKamarHotelActivity extends AppCompatActivity {
         tv_namaHotel.setText(hotel.getNamaHotel());
         tv_lokasiDaerah.setText(hotel.getLokasiDaerah());
         tv_lokasiKota.setText(hotel.getLokasiKota());
-        tv_durasiInap.setText(dataPesan.getDurasi());
+//        tv_durasiInap.setText(dataPesan.getDurasi());
         tv_namaKamar.setText(kamar.getNamaKamar());
-        tv_tgl.setText(dataPesan.getTanggal());
-        tv_maksTamu.setText(kamar.getMakstamu());
+//        tv_tgl.setText(dataPesan.getTanggal());
+//        tv_maksTamu.setText(kamar.getMakstamu());
         tv_durasiHitung.setText(tv_durasiInap.getText());
         tv_hargaHitung.setText(kamar.getHarga());
         int durasiInap = Integer.parseInt(tv_durasiInap.getText().toString());
@@ -58,9 +58,9 @@ public class PesanKamarHotelActivity extends AppCompatActivity {
         b_hotel_detail_pesanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dataPesan.setNamaPemesan(et_namaPemesan.getText().toString());
-                dataPesan.setNomorHp(et_nomor.getText().toString());
-                dataPesan.setEmail(et_email.getText().toString());
+//                dataPesan.setNamaPemesan(et_namaPemesan.getText().toString());
+//                dataPesan.setNomorHp(et_nomor.getText().toString());
+//                dataPesan.setEmail(et_email.getText().toString());
                 Context context = v.getContext();
                 Intent intent = new Intent(context, ReviewPesanKamarHotelActivity.class);
                 intent.putExtra("hotel",hotel);

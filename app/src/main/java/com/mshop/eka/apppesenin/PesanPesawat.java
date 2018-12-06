@@ -3,10 +3,14 @@ package com.mshop.eka.apppesenin;
 import java.io.Serializable;
 
 public class PesanPesawat implements Serializable {
-    int idTransaksi;
-    String kotaAsal, kotaTujuan, tanggal, penumpang, namaPemesan, nomorHp, email,totalBiaya;
+    private int idTransaksi,idPemesan,idPembayaran;
+    private String kodePenerbangan;
 
-    public PesanPesawat() {
+    public PesanPesawat(int idTransaksi, int idPemesan, int idPembayaran, String kodePenerbangan) {
+        this.idTransaksi = idTransaksi;
+        this.idPemesan = idPemesan;
+        this.idPembayaran = idPembayaran;
+        this.kodePenerbangan = kodePenerbangan;
     }
 
     public int getIdTransaksi() {
@@ -17,67 +21,27 @@ public class PesanPesawat implements Serializable {
         this.idTransaksi = idTransaksi;
     }
 
-    public String getKotaAsal() {
-        return kotaAsal;
+    public int getIdPemesan() {
+        return idPemesan;
     }
 
-    public void setKotaAsal(String kotaAsal) {
-        this.kotaAsal = kotaAsal;
+    public void setIdPemesan(int idPemesan) {
+        this.idPemesan = idPemesan;
     }
 
-    public String getKotaTujuan() {
-        return kotaTujuan;
+    public int getIdPembayaran() {
+        return idPembayaran;
     }
 
-    public void setKotaTujuan(String kotaTujuan) {
-        this.kotaTujuan = kotaTujuan;
+    public void setIdPembayaran(int idPembayaran) {
+        this.idPembayaran = idPembayaran;
     }
 
-    public String getTanggal() {
-        return tanggal;
+    public String getKodePenerbangan() {
+        return kodePenerbangan;
     }
 
-    public void setTanggal(String tanggal) {
-        this.tanggal = tanggal;
-    }
-
-    public String getPenumpang() {
-        return penumpang;
-    }
-
-    public void setPenumpang(String penumpang) {
-        this.penumpang = penumpang;
-    }
-
-    public String getNamaPemesan() {
-        return namaPemesan;
-    }
-
-    public void setNamaPemesan(String namaPemesan) {
-        this.namaPemesan = namaPemesan;
-    }
-
-    public String getNomorHp() {
-        return nomorHp;
-    }
-
-    public void setNomorHp(String nomorHp) {
-        this.nomorHp = nomorHp;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTotalBiaya() {
-        return totalBiaya;
-    }
-
-    public void setTotalBiaya(String totalBiaya) {
-        this.totalBiaya = totalBiaya;
+    public void setKodePenerbangan(String kodePenerbangan) {
+        this.kodePenerbangan = kodePenerbangan;
     }
 }

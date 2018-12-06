@@ -45,12 +45,12 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
         Hotel recyclerItemHotel = itemHotels.get(position);
         //-----------------------------------------------------------
         holder.textViewNamaHotel.setText(recyclerItemHotel.getNamaHotel());
-        holder.textViewRating.setText(recyclerItemHotel.getRating());
+//        holder.textViewRating.setText(recyclerItemHotel.getRating());
         holder.textViewLokasiDaerah.setText(recyclerItemHotel.getLokasiDaerah());
         holder.textViewLokasiKota.setText(recyclerItemHotel.getLokasiKota());
-        holder.textViewHarga.setText(recyclerItemHotel.getHarga());
+//        holder.textViewHarga.setText(recyclerItemHotel.getHarga());
 
-        holder.imageView.setImageDrawable(mContext.getResources().getDrawable(recyclerItemHotel.getGambar()));
+//        holder.imageView.setImageDrawable(mContext.getResources().getDrawable(recyclerItemHotel.getGambar()));
 
         holder.ll_hotel_daftar.setOnClickListener(new View.OnClickListener() {
             @Override

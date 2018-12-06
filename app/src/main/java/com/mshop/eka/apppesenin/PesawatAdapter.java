@@ -8,20 +8,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 public class PesawatAdapter extends RecyclerView.Adapter<PesawatAdapter.PesawatViewHolder>{
     private Context mCtx;
-    private List<Pesawat> pesawatList;
-    private PesanPesawat pesanPesawat;
+    private List<Penerbangan> penerbanganArrayList;
+    private CariPesawat cariPesawat;
 
-    public PesawatAdapter(Context mCtx, List<Pesawat> pesawatList, PesanPesawat pesanPesawat) {
+    public PesawatAdapter(Context mCtx, List<Penerbangan> penerbanganArrayList, CariPesawat cariPesawat) {
         this.mCtx = mCtx;
-        this.pesawatList = pesawatList;
-        this.pesanPesawat = pesanPesawat;
+        this.penerbanganArrayList = penerbanganArrayList;
+        this.cariPesawat = cariPesawat;
     }
 
     @NonNull
@@ -34,24 +33,24 @@ public class PesawatAdapter extends RecyclerView.Adapter<PesawatAdapter.PesawatV
 
     @Override
     public void onBindViewHolder(@NonNull PesawatViewHolder holder, final int position) {
-        Pesawat pesawat = pesawatList.get(position);
+        Penerbangan penerbangan = penerbanganArrayList.get(position);
 
-        holder.tv_namaMaskapai.setText(pesawat.getNama_Maskapai());
-        holder.iv_Maskapai.setImageDrawable(mCtx.getResources().getDrawable(pesawat.getImageMaskapai()));
-        holder.tv_waktuBerangkat.setText(pesawat.getWaktuBerangkat());
-        holder.tv_waktuSampai.setText(pesawat.getWaktuSampai());
-        holder.tv_bandaraAsal.setText(pesawat.getBandaraAsalSingkat());
-        holder.tv_bandaraTujuan.setText(pesawat.getBandaraTujuanSingkat());
-        holder.tv_bagasi.setText(pesawat.getBagasi());
-        holder.tv_harga.setText(pesawat.getHarga());
-        holder.tv_kuotaPesawat.setText(pesawat.getKuota());
+        holder.tv_namaMaskapai.setText(penerbangan.getKodePenerbangan());
+//        holder.iv_Maskapai.setImageDrawable(mCtx.getResources().getDrawable(pesawat.getImageMaskapai()));
+        holder.tv_waktuBerangkat.setText(penerbangan.getWaktuKeberangkatan());
+        holder.tv_waktuSampai.setText(penerbangan.getWaktuKedatangan());
+//        holder.tv_bandaraAsal.setText(penerbangan.getIdTerminalKeberangkatan());
+//        holder.tv_bandaraTujuan.setText(penerbangan.getIdTerminalKedatangan());
+//        holder.tv_bagasi.setText(penerbangan.getIdPesawat());
+        holder.tv_harga.setText(penerbangan.getHarga());
+//        holder.tv_kuotaPesawat.setText(penerbangan.getIdPesawat());
 
         holder.c_layout_pesawat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentP = new Intent(mCtx, InfoPesawatActivity.class);
-                intentP.putExtra("dataPesanPesawat",pesanPesawat);
-                intentP.putExtra("pesawat", pesawatList.get(position));
+                intentP.putExtra("dataPesanPesawat",cariPesawat);
+                intentP.putExtra("pesawat", penerbanganArrayList.get(position));
                 mCtx.startActivity(intentP);
             }
         });
@@ -59,18 +58,18 @@ public class PesawatAdapter extends RecyclerView.Adapter<PesawatAdapter.PesawatV
 
     @Override
     public int getItemCount() {
-        return pesawatList.size();
+        return penerbanganArrayList.size();
     }
 
     class PesawatViewHolder extends RecyclerView.ViewHolder{
         TextView tv_namaMaskapai, tv_waktuBerangkat, tv_waktuSampai, tv_bandaraAsal, tv_bandaraTujuan, tv_bagasi, tv_harga, tv_kuotaPesawat;
-        ImageView iv_Maskapai;
+//        ImageView iv_Maskapai;
         ConstraintLayout c_layout_pesawat;
 
         public PesawatViewHolder(View itemView) {
             super(itemView);
             tv_namaMaskapai = itemView.findViewById(R.id.tv_namaMaskapai);
-            iv_Maskapai = itemView.findViewById(R.id.iv_logoMaskapai);
+//            iv_Maskapai = itemView.findViewById(R.id.iv_logoMaskapai);
             tv_waktuBerangkat = itemView.findViewById(R.id.tv_waktuBerangkat);
             tv_waktuSampai = itemView.findViewById(R.id.tv_waktuSampai);
             tv_bandaraAsal = itemView.findViewById(R.id.tv_bandaraAsal);

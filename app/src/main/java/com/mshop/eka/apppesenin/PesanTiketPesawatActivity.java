@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PesanTiketPesawatActivity extends AppCompatActivity {
+    DetailPemesanPesawat detailPemesanPesawat;
+    String namaPemesan, nomorHPPemesan, emailPemesan;
     TextView tv_namaMaskapai, tv_waktuBerangkat, tv_waktuSampai, tv_tgl, tv_bandaraAsal, tv_terminalAsal, tv_bandaraTujuan,
             tv_terminalTujuan, tv_penumpang, tv_biaya, tv_biayaTotal;
     EditText et_namaPemesan, et_nomorHp, et_email;
@@ -21,8 +23,8 @@ public class PesanTiketPesawatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesan_tiket_pesawat);
 
-        final Pesawat itemPesawat = (Pesawat) getIntent().getSerializableExtra("pesawat");
-        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
+        final Penerbangan penerbangan = (Penerbangan) getIntent().getSerializableExtra("pesawat");
+        final CariPesawat cariPesawat = (CariPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tv_namaMaskapai = findViewById(R.id.tv_pesanPesawat_namaMaskapai);
@@ -43,19 +45,19 @@ public class PesanTiketPesawatActivity extends AppCompatActivity {
 
         b_pesan = findViewById(R.id.b_pesanPesawat_detail_pesanan);
 
-        tv_namaMaskapai.setText(itemPesawat.getNama_Maskapai());
-        iv_logoMaskapai.setImageResource(itemPesawat.getImageMaskapai());
-        tv_waktuBerangkat.setText(itemPesawat.getWaktuBerangkat());
-        tv_waktuSampai.setText(itemPesawat.getWaktuSampai());
-        tv_tgl.setText(itemPesawat.getTanggal());
-        tv_bandaraAsal.setText(itemPesawat.getBandaraAsalSingkat());
-        tv_terminalAsal.setText(itemPesawat.getTerminalAsal());
-        tv_bandaraTujuan.setText(itemPesawat.getBandaraTujuanSingkat());
-        tv_terminalTujuan.setText(itemPesawat.getTerminalTujuan());
-        tv_penumpang.setText(dataPesanPesawat.getPenumpang());
-        tv_biaya.setText(itemPesawat.getHarga());
-        int jumlahPenumpang = Integer.parseInt(tv_penumpang.getText().toString());
-        int hargaTiketPesawat = Integer.parseInt(itemPesawat.getHarga());
+        tv_namaMaskapai.setText(penerbangan.getKodePenerbangan());
+//        iv_logoMaskapai.setImageResource(penerbangan.getImageMaskapai());
+        tv_waktuBerangkat.setText(penerbangan.getWaktuKeberangkatan());
+        tv_waktuSampai.setText(penerbangan.getWaktuKedatangan());
+        tv_tgl.setText(penerbangan.getTanggalPenerbangan());
+//        tv_bandaraAsal.setText(penerbangan.getBandaraAsalSingkat());
+        tv_terminalAsal.setText(Integer.toString(penerbangan.getIdTerminalKeberangkatan()));
+//        tv_bandaraTujuan.setText(penerbangan.getBandaraTujuanSingkat());
+        tv_terminalTujuan.setText(Integer.toString(penerbangan.getIdTerminalKedatangan()));
+        tv_penumpang.setText(cariPesawat.getJumlahPenumpang());
+        tv_biaya.setText(penerbangan.getHarga());
+        int jumlahPenumpang = Integer.parseInt(cariPesawat.getJumlahPenumpang());
+        int hargaTiketPesawat = Integer.parseInt(penerbangan.getHarga());
         int hargaTotalInt = jumlahPenumpang*hargaTiketPesawat;
         String hargaTotalString = Integer.toString(hargaTotalInt);
         tv_biayaTotal.setText(hargaTotalString);
@@ -63,13 +65,14 @@ public class PesanTiketPesawatActivity extends AppCompatActivity {
         b_pesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dataPesanPesawat.setNamaPemesan(et_namaPemesan.getText().toString());
-                dataPesanPesawat.setNomorHp(et_nomorHp.getText().toString());
-                dataPesanPesawat.setEmail(et_email.getText().toString());
-                dataPesanPesawat.setTotalBiaya(tv_biayaTotal.getText().toString());
+                namaPemesan = et_namaPemesan.getText().toString();
+                nomorHPPemesan = et_nomorHp.getText().toString();
+                emailPemesan = et_email.getText().toString();
+                detailPemesanPesawat = new DetailPemesanPesawat(1,namaPemesan,nomorHPPemesan,emailPemesan);
                 Intent intent = new Intent(getBaseContext(), ReviewPesanTiketPesawatActivity.class);
-                intent.putExtra("dataPesanPesawat",dataPesanPesawat);
-                intent.putExtra("pesawat", itemPesawat);
+                intent.putExtra("dataPesanPesawat",cariPesawat);
+                intent.putExtra("pesawat", penerbangan);
+                intent.putExtra("pemesanPesawat",detailPemesanPesawat);
                 startActivity(intent);
             }
         });

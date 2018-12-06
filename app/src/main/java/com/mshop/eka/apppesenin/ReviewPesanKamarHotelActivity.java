@@ -45,10 +45,10 @@ public class ReviewPesanKamarHotelActivity extends AppCompatActivity {
         tv_namaHotel.setText(hotel.getNamaHotel());
         tv_lokasiDaerah.setText(hotel.getLokasiDaerah());
         tv_lokasiKota.setText(hotel.getLokasiKota());
-        tv_tgl.setText(dataPesan.getTanggal());
-        tv_durasiInap.setText(dataPesan.getDurasi());
+//        tv_tgl.setText(dataPesan.getTanggal());
+//        tv_durasiInap.setText(dataPesan.getDurasi());
         tv_namaKamar.setText(kamar.getNamaKamar());
-        tv_maksTamu.setText(kamar.getMakstamu());
+//        tv_maksTamu.setText(kamar.getMakstamu());
         tv_durasiHitung.setText(tv_durasiInap.getText());
         tv_hargaHitung.setText(kamar.getHarga());
         durasiInap = Integer.parseInt(tv_durasiInap.getText().toString());
@@ -56,15 +56,15 @@ public class ReviewPesanKamarHotelActivity extends AppCompatActivity {
         hargaTotalInt = durasiInap*hargaInap;
         hargaTotalString = Integer.toString(hargaTotalInt);
         tv_hargaTotal.setText(hargaTotalString);
-        tv_namaPemesan.setText(dataPesan.getNamaPemesan());
-        tv_nomor.setText(dataPesan.getNomorHp());
-        tv_email.setText(dataPesan.getEmail());
+//        tv_namaPemesan.setText(dataPesan.getNamaPemesan());
+//        tv_nomor.setText(dataPesan.getNomorHp());
+//        tv_email.setText(dataPesan.getEmail());
 
         b_hotel_detail_pesanan_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String hargaTotal = tv_hargaTotal.getText().toString();
-                dataPesan.setTotalBiaya(hargaTotal);
+//                dataPesan.setTotalBiaya(hargaTotal);
                 Intent intent = new Intent(getBaseContext(), MetodePembayaranActivity.class);
                 intent.putExtra("dataPesan",dataPesan);
                 intent.putExtra("kamar",kamar);

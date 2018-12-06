@@ -17,19 +17,21 @@ import java.util.Random;
 public class CheckoutBerhasilPesawat extends AppCompatActivity {
     Random random;
     int jumlahPembayaran;
-    String jumlahPembayaranString;
+    String jumlahPembayaranString, totalPembayaran;
 
     TextView tv_idTransaksi, tv_jumlahBayar, tv_noRek;
     ImageView iv_logo_bank;
     Button b_konfirmasi;
+
+    PesanPesawat pesanPesawat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_berhasil_pesawat);
 
-        final Pesawat itemPesawat = (Pesawat) getIntent().getSerializableExtra("pesawat");
-        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
+        final Penerbangan penerbangan = (Penerbangan) getIntent().getSerializableExtra("pesawat");
+        final DetailPemesanPesawat detailPemesanPesawat = (DetailPemesanPesawat) getIntent().getSerializableExtra("pemesanPesawat");
         final PembayaranPesawat pembayaranPesawat = (PembayaranPesawat) getIntent().getSerializableExtra("pembayaranPesawat");
         random = new Random();
         tv_idTransaksi = findViewById(R.id.tv_idTransaksiPesawat);
@@ -39,7 +41,8 @@ public class CheckoutBerhasilPesawat extends AppCompatActivity {
         b_konfirmasi = findViewById(R.id.b_konfirmasiPesawat);
 
         tv_idTransaksi.setText(Integer.toString(pembayaranPesawat.getIdTransaksi()));
-        jumlahPembayaran = (Integer.parseInt(pembayaranPesawat.getTotalTagihan()))+random.nextInt(900) + 100;;
+        jumlahPembayaran = (Integer.parseInt(pembayaranPesawat.getTotalTagihan()))+random.nextInt(900) + 100;
+        totalPembayaran = Integer.toString(jumlahPembayaran);
         jumlahPembayaranString = NumberFormat.getNumberInstance(Locale.GERMAN).format(jumlahPembayaran);
         tv_jumlahBayar.setText(jumlahPembayaranString);
 
@@ -63,11 +66,13 @@ public class CheckoutBerhasilPesawat extends AppCompatActivity {
         b_konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = v.getContext();
-                Intent intent = new Intent(context, MainActivity.class);
-                Toast.makeText(context,"Terimakasih",Toast.LENGTH_SHORT).show();
-                Toast.makeText(context,"Pesanan Dalam Proses Verifikasi",Toast.LENGTH_SHORT).show();
-                startActivity(intent);
+            pembayaranPesawat.setTotalTagihan(totalPembayaran);
+            pesanPesawat = new PesanPesawat(1, detailPemesanPesawat.getIdPemesan(), pembayaranPesawat.getIdTransaksi(), penerbangan.getKodePenerbangan());
+            Context context = v.getContext();
+            Intent intent = new Intent(context, MainActivity.class);
+            Toast.makeText(context,"Terimakasih",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"Pesanan Dalam Proses Verifikasi",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
             }
         });
     }

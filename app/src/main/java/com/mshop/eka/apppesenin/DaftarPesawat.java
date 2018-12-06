@@ -7,12 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DaftarPesawat extends AppCompatActivity {
     RecyclerView recyclerView;
     PesawatAdapter pesawatAdapter;
-    List<Pesawat> pesawatList;
 
     TextView tv_pencarianKotaAsal, tv_pencarianKotaTujuan;
 
@@ -21,129 +19,90 @@ public class DaftarPesawat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_pesawat);
 
-        final PesanPesawat dataPesanPesawat = (PesanPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
+        final CariPesawat cariPesawat = (CariPesawat) getIntent().getSerializableExtra("dataPesanPesawat");
 
         tv_pencarianKotaAsal = findViewById(R.id.tv_pencarian_kotaAsal);
         tv_pencarianKotaTujuan = findViewById(R.id.tv_pencarian_kotaTujuan);
 
-        tv_pencarianKotaAsal.setText(dataPesanPesawat.getKotaAsal());
-        tv_pencarianKotaTujuan.setText(dataPesanPesawat.getKotaTujuan());
+        tv_pencarianKotaAsal.setText(cariPesawat.getKotaKeberangkatan());
+        tv_pencarianKotaTujuan.setText(cariPesawat.getKotaKedatangan());
 
-        pesawatList = new ArrayList<>();
+        ArrayList<Penerbangan> penerbanganArrayList = new ArrayList<>();
+
         recyclerView = findViewById(R.id.Layout_rv_pesawat);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        pesawatList.add(new Pesawat(
+        Penerbangan p1 = new Penerbangan(
                 1,
-                R.drawable.lion,
-                "Lion Air",
-                "23/12/2018",
-                "08:25",
-                "10:00",
-                "Jakarta",
-                "Soekarno Hatta International Airport",
-                "CGK",
-                "Terminal 1",
-                "Malang",
-                "Abdul Rachman Saleh",
-                "MLG",
-                "Terminal 2",
-                "JT-120",
-                "1 Jam 35 Menit",
-                "Boeing 737",
-                "3-3",
-                "31",
-                "7",
-                "20",
-                "200",
-                "700000"
-        ));
-        pesawatList.add(new Pesawat(
+                1,
                 2,
-                R.drawable.citilink,
-                "Citilink",
+                "GA-720",
                 "23/12/2018",
-                "08:25",
-                "10:00",
-                "Jakarta",
-                "Soekarno Hatta International Airport",
-                "CGK",
-                "Terminal 1",
+                "08:20",
+                "10:10",
                 "Malang",
-                "Abdul Rachman Saleh",
-                "MLG",
-                "Terminal 2",
-                "QG-412",
-                "1 Jam 35 Menit",
-                "Boeing 737",
-                "3-3",
-                "31",
-                "7",
-                "20",
-                "200",
-                "900000"
-        ));
-        pesawatList.add(new Pesawat(
-                3,
-                R.drawable.batik,
-                "Batik Air",
-                "25/12/2018",
-                "08:25",
-                "10:00",
                 "Jakarta",
-                "Soekarno Hatta International Airport",
-                "CGK",
-                "Terminal 1",
-                "Malang",
-                "Abdul Rachman Saleh",
-                "MLG",
-                "Terminal 2",
-                "ID-612",
-                "1 Jam 35 Menit",
-                "Boeing 737",
-                "3-3",
-                "31",
-                "7",
-                "20",
-                "200",
-                "800000"
-        ));
-        pesawatList.add(new Pesawat(
-                4,
-                R.drawable.garuda,
-                "Garuda Indonesia",
-                "24/12/2018",
-                "08:25",
-                "10:00",
-                "Jakarta",
-                "Soekarno Hatta International Airport",
-                "CGK",
-                "Terminal 1",
-                "Malang",
-                "Abdul Rachman Saleh",
-                "MLG",
-                "Terminal 3",
-                "GA-363",
-                "1 Jam 35 Menit",
-                "Boeing 737",
-                "3-3",
-                "31",
-                "7",
-                "20",
-                "200",
-                "970000"
-        ));
+                "1 Jam 50 Menit",
+                "91000"
+        );
 
-        ArrayList<Pesawat> filteredPesawat = new ArrayList<>();
-        for (Pesawat pesawat : pesawatList){
-            if(dataPesanPesawat.getTanggal().equalsIgnoreCase(pesawat.getTanggal())&&dataPesanPesawat.getKotaAsal().equalsIgnoreCase(pesawat.getKotaAsal())&&
-                    dataPesanPesawat.getKotaTujuan().equalsIgnoreCase(pesawat.getKotaTujuan())){
-                filteredPesawat.add(pesawat);
+        Penerbangan p2 = new Penerbangan(
+                2,
+                4,
+                3,
+                "JT-120",
+                "23/12/2018",
+                "08:20",
+                "10:10",
+                "Malang",
+                "Jakarta",
+                "1 Jam 50 Menit",
+                "920000"
+        );
+
+        Penerbangan p3 = new Penerbangan(
+                3,
+                6,
+                5,
+                "ID-20",
+                "23/12/2018",
+                "08:20",
+                "10:10",
+                "Malang",
+                "Jakarta",
+                "1 Jam 50 Menit",
+                "930000"
+        );
+
+        Penerbangan p4 = new Penerbangan(
+                4,
+                7,
+                8,
+                "QZ-320",
+                "23/12/2018",
+                "08:20",
+                "10:10",
+                "Malang",
+                "Jakarta",
+                "1 Jam 50 Menit",
+                "940000"
+        );
+
+        penerbanganArrayList.add(p1);
+        penerbanganArrayList.add(p2);
+        penerbanganArrayList.add(p3);
+        penerbanganArrayList.add(p4);
+
+        ArrayList<Penerbangan> filteredPenerbangan = new ArrayList<>();
+        for (Penerbangan penerbangan : penerbanganArrayList){
+            if(cariPesawat.getTanggalPenerbangan().equalsIgnoreCase(penerbangan.getTanggalPenerbangan())&&cariPesawat.getKotaKeberangkatan().equalsIgnoreCase(penerbangan.getKotaKeberangkatan())&&
+                    cariPesawat.getKotaKedatangan().equalsIgnoreCase(penerbangan.getKotaKedatangan())){
+                filteredPenerbangan.add(penerbangan);
             }
         }
 
-        pesawatAdapter = new PesawatAdapter(this,filteredPesawat,dataPesanPesawat);
+        pesawatAdapter = new PesawatAdapter(this,filteredPenerbangan,cariPesawat);
         recyclerView.setAdapter(pesawatAdapter);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

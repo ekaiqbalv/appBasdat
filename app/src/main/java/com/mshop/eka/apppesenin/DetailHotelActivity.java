@@ -26,9 +26,9 @@ public class DetailHotelActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         final Hotel currentHotel = (Hotel) getIntent().getSerializableExtra("hotel");
         final PesanHotel dataPesan = (PesanHotel) getIntent().getSerializableExtra("dataPesan");
-        iv_hotel_gambar_detail.setImageResource(currentHotel.getGambar());
+//        iv_hotel_gambar_detail.setImageResource(currentHotel.getGambar());
         tv_hotel_nama.setText(currentHotel.getNamaHotel());
-        tv_hotel_bintang.setText(currentHotel.getRating());
+//        tv_hotel_bintang.setText(currentHotel.getRating());
         tv_hotel_lokasi_daerah.setText(currentHotel.getLokasiDaerah());
         tv_hotel_lokasi_kota.setText(currentHotel.getLokasiKota());
         b_hotel_pilih_kamar = findViewById(R.id.b_hotel_pilih_kamar);

@@ -38,11 +38,11 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.KamarViewHol
         final Kamar kamar = kamarList.get(position);
 
         holder.textViewNamaKamar.setText(kamar.getNamaKamar());
-        holder.textViewMakstamu.setText(kamar.getMakstamu());
+//        holder.textViewMakstamu.setText(kamar.getMakstamu());
         holder.textViewSarapan.setText(kamar.getSarapan());
         holder.textViewWifi.setText(kamar.getWifi());
         holder.textViewHarga.setText(kamar.getHarga());
-        holder.textViewKuota.setText(kamar.getKuota());
+//        holder.textViewKuota.setText(kamar.getKuota());
 
         holder.cl_item.setOnClickListener(new View.OnClickListener() {
             @Override

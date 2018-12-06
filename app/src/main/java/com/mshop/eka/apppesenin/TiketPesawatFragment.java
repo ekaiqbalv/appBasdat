@@ -79,7 +79,7 @@ public class TiketPesawatFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final PesanPesawat pesanPesawat = new PesanPesawat();
+        final CariPesawat cariPesawat = new CariPesawat();
 
         tv_pesawat_bandara_asal = view.findViewById(R.id.tv_pesawat_bandara_asal);
         tv_pesawat_bandara_tujuan = view.findViewById(R.id.tv_pesawat_bandara_tujuan);
@@ -132,12 +132,12 @@ public class TiketPesawatFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),DaftarPesawat.class);
-                pesanPesawat.setIdTransaksi(1);
-                pesanPesawat.setKotaAsal(dataKotaAsal);
-                pesanPesawat.setKotaTujuan(dataKotaTujuan);
-                pesanPesawat.setTanggal(dataTanggal);
-                pesanPesawat.setPenumpang(dataPenumpang);
-                intent.putExtra("dataPesanPesawat", pesanPesawat);
+                cariPesawat.setIdCari(1);
+                cariPesawat.setKotaKeberangkatan(dataKotaAsal);
+                cariPesawat.setKotaKedatangan(dataKotaTujuan);
+                cariPesawat.setTanggalPenerbangan(dataTanggal);
+                cariPesawat.setJumlahPenumpang(dataPenumpang);
+                intent.putExtra("dataPesanPesawat", cariPesawat);
                 startActivity(intent);
             }
         });

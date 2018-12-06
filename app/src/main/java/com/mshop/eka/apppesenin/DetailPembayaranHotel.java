@@ -2,16 +2,15 @@ package com.mshop.eka.apppesenin;
 
 import java.io.Serializable;
 
-public class PembayaranPesawat implements Serializable {
-    int idTransaksi;
-    String totalTagihan, namaBank, nomorRekening, namaRekening;
+public class DetailPembayaranHotel implements Serializable {
+    private int idTransaksi;
+    private String namaBank, nomorRekening, namaPemilikRekening;
 
-    public PembayaranPesawat(int idTransaksi, String totalTagihan, String namaBank, String nomorRekening, String namaRekening) {
+    public DetailPembayaranHotel(int idTransaksi, String namaBank, String nomorRekening, String namaPemilikRekening) {
         this.idTransaksi = idTransaksi;
-        this.totalTagihan = totalTagihan;
         this.namaBank = namaBank;
         this.nomorRekening = nomorRekening;
-        this.namaRekening = namaRekening;
+        this.namaPemilikRekening = namaPemilikRekening;
     }
 
     public int getIdTransaksi() {
@@ -20,14 +19,6 @@ public class PembayaranPesawat implements Serializable {
 
     public void setIdTransaksi(int idTransaksi) {
         this.idTransaksi = idTransaksi;
-    }
-
-    public String getTotalTagihan() {
-        return totalTagihan;
-    }
-
-    public void setTotalTagihan(String totalTagihan) {
-        this.totalTagihan = totalTagihan;
     }
 
     public String getNamaBank() {
@@ -46,11 +37,11 @@ public class PembayaranPesawat implements Serializable {
         this.nomorRekening = nomorRekening;
     }
 
-    public String getNamaRekening() {
-        return namaRekening;
+    public String getNamaPemilikRekening() {
+        return namaPemilikRekening;
     }
 
-    public void setNamaRekening(String namaRekening) {
-        this.namaRekening = namaRekening;
+    public void setNamaPemilikRekening(String namaPemilikRekening) {
+        this.namaPemilikRekening = namaPemilikRekening;
     }
 }

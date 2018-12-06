@@ -54,7 +54,7 @@ public class MetodePembayaranActivity extends AppCompatActivity {
         });
 
         pembayaranHotel.setIdTransaksi(dataPesan.getIdTransaksi());
-        pembayaranHotel.setTotalTagihan(dataPesan.getTotalBiaya());
+//        pembayaranHotel.setTotalTagihan(dataPesan.getTotalBiaya());
         tv_totaltagihan_angka.setText(pembayaranHotel.getTotalTagihan());
 
         b_metode_pembayaran.setOnClickListener(new View.OnClickListener() {

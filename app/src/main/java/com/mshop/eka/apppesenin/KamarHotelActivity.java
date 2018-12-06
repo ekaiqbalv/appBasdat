@@ -27,9 +27,9 @@ public class KamarHotelActivity extends AppCompatActivity {
         ArrayList<Kamar> filteredKamar = new ArrayList<>();
 
         for (Kamar kamar : currentHotel.getKamarList()){
-            if(kamar.getTanggal().equalsIgnoreCase(dataPesan.getTanggal())){
-                filteredKamar.add(kamar);
-            }
+//            if(kamar.getTanggal().equalsIgnoreCase(dataPesan.getTanggal())){
+//                filteredKamar.add(kamar);
+//            }
         }
 
         recyclerView.setAdapter(new KamarAdapter(getBaseContext(), filteredKamar,currentHotel,dataPesan));

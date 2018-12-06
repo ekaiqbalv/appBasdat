@@ -3,17 +3,13 @@ package com.mshop.eka.apppesenin;
 import java.io.Serializable;
 
 public class PesanHotel implements Serializable {
-    int idTransaksi;
-    String lokasiKota, tanggal, durasi, namaPemesan, nomorHp, email,totalBiaya;
+    private int idTransaksi, idKamarTersedia,idPemesan, idPembayaran;
 
-    public PesanHotel() {
-    }
-
-    public PesanHotel(int idTransaksi, String lokasiKota, String tanggal, String durasi) {
+    public PesanHotel(int idTransaksi, int idKamarTersedia, int idPemesan, int idPembayaran) {
         this.idTransaksi = idTransaksi;
-        this.lokasiKota = lokasiKota;
-        this.tanggal = tanggal;
-        this.durasi = durasi;
+        this.idKamarTersedia = idKamarTersedia;
+        this.idPemesan = idPemesan;
+        this.idPembayaran = idPembayaran;
     }
 
     public int getIdTransaksi() {
@@ -24,37 +20,27 @@ public class PesanHotel implements Serializable {
         this.idTransaksi = idTransaksi;
     }
 
-    public String getLokasiKota() { return lokasiKota; }
-
-    public void setLokasiKota(String lokasiKota) {
-        this.lokasiKota = lokasiKota;
+    public int getIdKamarTersedia() {
+        return idKamarTersedia;
     }
 
-    public String getTanggal() {
-        return tanggal;
+    public void setIdKamarTersedia(int idKamarTersedia) {
+        this.idKamarTersedia = idKamarTersedia;
     }
 
-    public void setTanggal(String tanggal) {
-        this.tanggal = tanggal;
+    public int getIdPemesan() {
+        return idPemesan;
     }
 
-    public String getDurasi() { return durasi; }
+    public void setIdPemesan(int idPemesan) {
+        this.idPemesan = idPemesan;
+    }
 
-    public void setDurasi(String durasi) { this.durasi = durasi; }
+    public int getIdPembayaran() {
+        return idPembayaran;
+    }
 
-    public String getNamaPemesan() { return namaPemesan; }
-
-    public void setNamaPemesan(String namaPemesan) { this.namaPemesan = namaPemesan; }
-
-    public String getNomorHp() { return nomorHp; }
-
-    public void setNomorHp(String nomorHp) { this.nomorHp = nomorHp; }
-
-    public String getEmail() { return email; }
-
-    public void setEmail(String email) { this.email = email; }
-
-    public String getTotalBiaya() { return totalBiaya; }
-
-    public void setTotalBiaya(String totalBiaya) { this.totalBiaya = totalBiaya; }
+    public void setIdPembayaran(int idPembayaran) {
+        this.idPembayaran = idPembayaran;
+    }
 }
